@@ -58,7 +58,7 @@ const BookingCards = () => {
           <h2 className="text-3xl sm:text-4xl font-bold text-[#1D2442] mb-4">Booking and Beyond</h2>
           <p className="text-gray-600  max-w-3xl text-xl mx-auto">Trafft isn’t just another online appointment booking app. It’s a comprehensive solution for organizing your entire business.</p>
         </div>
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="max-w-7xl mx-auto grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {cards.map((card, index) => (
             <Card key={index} image={card.image} title={card.title} description={card.description} />
           ))}
