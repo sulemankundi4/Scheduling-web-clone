@@ -4,6 +4,7 @@ import Navbar from "../Components/Shared/Navbar";
 import BookingCards from "../Components/LandingPage/BookingCards";
 import BookingChannels from "../Components/LandingPage/BookingChannels";
 import TestimonialSection from "../Components/LandingPage/Testimonial";
+import MobileAppBanner from "../Components/LandingPage/MobileAppBanner";
 const LandingPage = () => {
   return (
     <div>
@@ -12,6 +13,7 @@ const LandingPage = () => {
       <BookingCards />
       <BookingChannels />
       <TestimonialSection />
+      <MobileAppBanner />
     </div>
   );
 };
