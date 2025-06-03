@@ -6,6 +6,8 @@ import BookingChannels from "../Components/LandingPage/BookingChannels";
 import TestimonialSection from "../Components/LandingPage/Testimonial";
 import MobileAppBanner from "../Components/LandingPage/MobileAppBanner";
 import Services from "../Components/LandingPage/Services";
+import Cta from "../Components/LandingPage/Cta";
+import Footer from "../Components/Shared/Footer";
 const LandingPage = () => {
   return (
     <div>
@@ -16,6 +18,8 @@ const LandingPage = () => {
       <TestimonialSection />
       <MobileAppBanner />
       <Services />
+      <Cta />
+      <Footer />
     </div>
   );
 };

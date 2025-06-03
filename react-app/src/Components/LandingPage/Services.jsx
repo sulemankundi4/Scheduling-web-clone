@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { BrainCircuit, GraduationCap, Scissors, UserRound, Dumbbell, FileText, HeartPulse, CalendarCheck, BookOpen, School, CarFront, BriefcaseBusiness } from "lucide-react";
 import bgImage from "../../assets/Images/bg-image.webp";
 import brand1 from "../../assets/Images/brand1.webp";
@@ -10,6 +10,11 @@ import brand6 from "../../assets/Images/perfect-booking-experience-6.webp";
 import brand7 from "../../assets/Images/perfect-booking-experience-7.webp";
 import brand8 from "../../assets/Images/perfect-booking-experience-8.webp";
 import { Calendar, Rocket, TrendingUp, ClipboardCheck } from "lucide-react";
+
+import image1 from "../../assets/Images/section-1.webp";
+import image2 from "../../assets/Images/section-2.webp";
+import image3 from "../../assets/Images/section-3.webp";
+
 const SERVICES = [
   {
     id: "coaching",
@@ -90,8 +95,54 @@ const SERVICES = [
   },
 ];
 
+const SECTIONS = [
+  {
+    id: "section1",
+    title: "Automated appointment booking and payment processing",
+    description: "Encourage early booking with the personalized booking environment created by Trafft. Our appointment booking software easily integrates with your website, making it a stress-free online booking experience for your client.",
+    image: image1,
+  },
+  {
+    id: "section2",
+    title: "Appointment reminders for all participants",
+    description: "No more forgotten appointments. Our online scheduling software will automatically send SMS and email reminders and follow ups so that both the staff and the customers receive appointment reminders and updates.",
+    image: image2,
+  },
+  {
+    id: "section3",
+    title: "Monitor your business performance",
+    description: "The Trafft online booking system helps you increase sales by providing important business reports and dashboards to help you track the performance of your business through vital KPIs and statistics.",
+    image: image3,
+  },
+];
+
 const Services = () => {
   const [active, setActive] = useState(SERVICES[0]);
+  const [activeImage, setActiveImage] = useState(SECTIONS[0].image);
+  const sectionRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute("data-id");
+            const found = SECTIONS.find((s) => s.id === id);
+            if (found) {
+              setActiveImage(found.image);
+            }
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    sectionRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <>
@@ -202,60 +253,23 @@ const Services = () => {
       </section>
 
       <section className="bg-[#050F2C] text-white py-20 px-4">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-5xl font-bold mb-4">
-            Focus on your work, we <br /> will take care of the rest
-          </h2>
-          <p className="text-gray-300 max-w-xl mx-auto mb-16 text-sm sm:text-base">Our online booking software helps you optimize your daily schedule and have more time to do what you do best.</p>
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">Watch your business evolve</h2>
+        <p className="text-center text-gray-400 max-w-3xl mx-auto mb-12">Offer on-site or virtual appointments, manage staff and services, process payments, send invoices and reminders - all in one small business scheduling software.</p>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-10">
-            {/* Left Card */}
-            <div className="bg-[#0A153A] p-6 rounded-xl text-left shadow-md">
-              <div className="mb-4 flex flex-wrap justify-start gap-4">
-                <img src="https://cdn-icons-png.flaticon.com/512/906/906338.png" className="w-8" alt="zapier" />
-                <img src="https://cdn-icons-png.flaticon.com/512/888/888853.png" className="w-8" alt="gmail" />
-                <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" className="w-8" alt="outlook" />
-                <img src="https://cdn-icons-png.flaticon.com/512/888/888870.png" className="w-8" alt="meet" />
-                <img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" className="w-8" alt="analytics" />
-                <img src="https://cdn-icons-png.flaticon.com/512/888/888846.png" className="w-8" alt="zoom" />
-                <img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" className="w-8" alt="calendar" />
-                <img src="https://cdn-icons-png.flaticon.com/512/888/888849.png" className="w-8" alt="paypal" />
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12">
+          {/* Left Text Sections */}
+          <div className="flex flex-col gap-24 w-full lg:w-1/2">
+            {SECTIONS.map((section, index) => (
+              <div key={section.id} data-id={section.id} ref={(el) => (sectionRefs.current[index] = el)} className="scroll-section transition duration-300 min-h-[300px] flex flex-col justify-center">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">{section.title}</h3>
+                <p className="text-gray-400 text-base">{section.description}</p>
               </div>
-              <h3 className="font-semibold text-xl mb-2">Connect your productivity tools with Trafft</h3>
-              <p className="text-gray-400 text-sm">Trafft integrates with online tools like calendars, payments, Google Meet, Zoom, and more. If your tool isn’t here, let us know and we’ll do our best to support it.</p>
-            </div>
-
-            {/* Right Card */}
-            <div className="bg-[#0A153A] p-6 rounded-xl text-left shadow-md flex flex-col justify-between">
-              <div>
-                <h3 className="font-semibold text-xl mb-2">Manage all the schedules in one calendar</h3>
-                <p className="text-gray-400 text-sm">Forget about checking availability for each team member manually. Integrate your team's calendars with Trafft and manage all schedules in one place.</p>
-              </div>
-            </div>
+            ))}
           </div>
 
-          {/* Bottom Cards */}
-          <div className="grid md:grid-cols-4 gap-4">
-            <div className="bg-[#0A153A] p-6 rounded-xl text-left">
-              <Calendar className="text-white mb-3" size={20} />
-              <h4 className="font-semibold text-base mb-1">Save time</h4>
-              <p className="text-gray-400 text-sm">Ditch paper bookings and let your clients schedule appointments online, freeing up hours for what matters most.</p>
-            </div>
-            <div className="bg-[#0A153A] p-6 rounded-xl text-left">
-              <Rocket className="text-white mb-3" size={20} />
-              <h4 className="font-semibold text-base mb-1">Boost productivity</h4>
-              <p className="text-gray-400 text-sm">Minimize admin work and focus more on customer experience with streamlined scheduling.</p>
-            </div>
-            <div className="bg-[#0A153A] p-6 rounded-xl text-left">
-              <TrendingUp className="text-white mb-3" size={20} />
-              <h4 className="font-semibold text-base mb-1">Increase revenue</h4>
-              <p className="text-gray-400 text-sm">Stay open 24/7. Let clients book anytime and watch your business grow without limits.</p>
-            </div>
-            <div className="bg-[#0A153A] p-6 rounded-xl text-left">
-              <ClipboardCheck className="text-white mb-3" size={20} />
-              <h4 className="font-semibold text-base mb-1">Improve satisfaction</h4>
-              <p className="text-gray-400 text-sm">Give customers the power to book when it’s convenient for them—online and hassle-free.</p>
-            </div>
+          {/* Right Image Preview */}
+          <div className="w-full lg:w-1/2 sticky top-24 h-[600px] flex items-center justify-center">
+            <img src={activeImage} alt="Preview" className="rounded-xl shadow-lg transition-all duration-700 ease-in-out max-h-full object-contain transform hover:scale-105" />
           </div>
         </div>
       </section>
