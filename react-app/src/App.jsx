@@ -4,7 +4,9 @@ import "./index.css";
 import LandingPage from "./Pages/LandingPage";
 import BookingPage from "./Pages/BookingPage";
 import CustomerManagement from "./Pages/CustomerMangement";
-
+import PaymentProcessingPage from "./Pages/PaymentProcessingPage";
+import BusinessProcessAutomation from "./Pages/BusinessProcessAutomation";
+import BusinessDashboard from "./Pages/BusinessDashboard";
 function App() {
   return (
     <Router>
@@ -12,6 +14,9 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/bookings" element={<BookingPage />} />
         <Route path="/customer-management" element={<CustomerManagement />} />
+        <Route path="/payment-processing" element={<PaymentProcessingPage />} />
+        <Route path="/business-automation" element={<BusinessProcessAutomation />} />
+        <Route path="/business-dashboard" element={<BusinessDashboard />} />
       </Routes>
     </Router>
   );
