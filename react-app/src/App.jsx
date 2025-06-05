@@ -8,6 +8,8 @@ import PaymentProcessingPage from "./Pages/PaymentProcessingPage";
 import BusinessProcessAutomation from "./Pages/BusinessProcessAutomation";
 import BusinessDashboard from "./Pages/BusinessDashboard";
 import SmartCalendar from "./Pages/SmartCalendar";
+import BeautySalon from "./Pages/BeautySalon";
+import CleaningService from "./Pages/CleaningService";
 function App() {
   return (
     <Router>
@@ -19,6 +21,8 @@ function App() {
         <Route path="/business-automation" element={<BusinessProcessAutomation />} />
         <Route path="/business-dashboard" element={<BusinessDashboard />} />
         <Route path="/smart-calendar-and-scheduling" element={<SmartCalendar />} />
+        <Route path="/beauty-salon" element={<BeautySalon />} />
+        <Route path="/cleaning-service" element={<CleaningService />} />
       </Routes>
     </Router>
   );
