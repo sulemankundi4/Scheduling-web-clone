@@ -1,6 +1,7 @@
 import React from "react";
 import bg from "../../assets/Images/Footer-bg.webp";
 import { Facebook, Instagram, Linkedin, Youtube, X, Music2 } from "lucide-react";
+import logo from "../../assets/Images/quickly_booked_logo_all_blue.png";
 
 const Footer = () => {
   return (
@@ -22,8 +23,7 @@ const Footer = () => {
             {/* Contact */}
             <div className="space-y-6">
               <div className="text-2xl font-bold flex items-center space-x-2">
-                <div className="w-6 h-6 bg-white rounded-full" />
-                <span>Trafft</span>
+                <img src={logo} alt="Trafft" className="w-50 h-12 object-contain" />
               </div>{" "}
               <div>
                 <h4 className="text-white font-semibold text-lg mb-4">Contact</h4>

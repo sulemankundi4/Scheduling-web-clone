@@ -14,14 +14,14 @@ import multipleLocations from "../../assets/Images/Multiple Locations (PRO).webp
 import recurringAppt from "../../assets/Images/Recurring Appointments (PRO).webp";
 import customRoles from "../../assets/Images/Custom Roles (PRO).webp";
 const features = [
-  { title: "Rescheduling and Canceling", image: resceduling },
-  { title: "Coupons", image: coupons },
-  { title: "SMS and Email Notifications (Free)", image: smsEmailNotif },
-  { title: "Extras ", image: extras },
-  { title: "Custom Fields", image: customFields },
-  { title: "Multiple Locations", image: multipleLocations },
-  { title: "Recurring Appointments", image: recurringAppt },
-  { title: "Custom Roles", image: customRoles },
+  { title: "Rescheduling and Canceling", image: resceduling, description: "Reduce no-shows and prevent last-minute cancellations by allowing your customers to cancel and reschedule an appointment in the salon appointments software in a few clicks." },
+  { title: "Coupons", image: coupons, description: "Offering discounts or free appointments to your customers is hassle-free with Trafft scheduling software for salons. Simply define the value of each coupon to provide exclusive deals." },
+  { title: "SMS and Email Notifications (Free)", image: smsEmailNotif, description: "No-shows are very common in beauty salon businesses. Make sure your clients come to the scheduled appointment by sending automatic SMS, Email, or WhatsApp reminders. Create custom notifications and follow-ups and interact with your customers in your brand voice." },
+  { title: "Extras ", image: extras, description: "To provide additional services and up-sell to your clients, you can add Extras to your existing services. Extras can extend the duration, increase the price, or even be offered for free without affecting the allotted time." },
+  { title: "Custom Fields", image: customFields, description: "Customize the booking form further by configuring custom fields such as dropdowns, radio buttons, and checkboxes to collect any additional information you require from your customers." },
+  { title: "Multiple Locations", image: multipleLocations, description: "If you have salons in multiple locations, you can manage all your business locations with one Trafft account. Also, your employees can work in a few locations and you can create their schedule for different locations." },
+  { title: "Recurring Appointments", image: recurringAppt, description: "Regular visitors to your salon can secure their spot on time. They can book an appointment that repeats by selecting the time and date for the first appointment and then choosing the type of recurrence." },
+  { title: "Custom Roles", image: customRoles, description: "Manage and create different roles for your employees. For example, limit the permissions and pages your users can access and create different levels of authority and management within your team." },
 ];
 
 const saloonFeatures = [
@@ -95,11 +95,22 @@ const SalonsFeatures = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((item, index) => (
-            <div key={index} className="bg-[#eef4ff] rounded-lg overflow-hidden shadow-sm text-black transition-transform duration-300 transform hover:scale-105 hover:shadow-xl cursor-pointer">
-              <div className="h-[180px] bg-white flex items-center justify-center overflow-hidden">
-                <img src={item.image} alt={item.title} className="object-contain h-full w-full" />
+            <div key={index} className="relative group bg-[#eef4ff] rounded-xl overflow-hidden shadow-md text-black transition-transform duration-300 transform hover:scale-105 cursor-pointer">
+              {/* Image Container */}
+              <div className="h-[200px] bg-white flex items-center justify-center overflow-hidden">
+                <img src={item.image} alt={item.title} className="object-contain h-full w-full transition-transform duration-300 group-hover:scale-105" />
               </div>
-              <div className="p-4 font-medium text-center">{item.title}</div>
+
+              {/* Title */}
+              <div className="p-4 font-semibold text-center">{item.title}</div>
+
+              {/* Hover Description Layer */}
+              <div className="absolute inset-0 bg-white/90 px-4 py-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between rounded-xl text-sm text-gray-800">
+                <div>
+                  <h4 className="font-bold text-base mb-2">{item.title}</h4>
+                  <p className="leading-relaxed">{item.description}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
