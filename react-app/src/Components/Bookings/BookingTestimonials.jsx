@@ -58,14 +58,14 @@ const reviews = [
 ];
 
 const features = [
-  { title: "Group Booking", image: groupImg },
-  { title: "Recurring Appointments", image: recurringImg },
-  { title: "Buffer Time", image: bufferImg },
-  { title: "Service Categories", image: categoriesImg },
-  { title: "Deposit Payments", image: depositImg },
-  { title: "Appointment Button", image: createAppointmentImg },
-  { title: "Custom Services", image: createServiceImg },
-  { title: "Client Panel", image: servicePanelImg },
+  { title: "Group Booking", image: groupImg, description: "If you need to host sessions for groups, Trafft allows you to define the minimum and maximum available slots for each appointment, ensuring smooth group bookings." },
+  { title: "Recurring Appointments", image: recurringImg, description: "Recurring Appointments feature enables customers to easily book appointments that repeat. They can select the date and time for the first appointment and then specify the type of recurrence and the number of repeats, all in a single booking process." },
+  { title: "Buffer Time", image: bufferImg, description: "Set the time before and/or after the appointment if an employee needs to prepare or clean up. During this designated period, the employee will be marked as unavailable, preventing any overlapping bookings for the same employee." },
+  { title: "Service Categories", image: categoriesImg, description: "Organize your services into different categories and reorder categories by clicking on the drag-and-drop button. The category position that you set will be used later when showing categories on the Booking form to your customers." },
+  { title: "Deposit Payments", image: depositImg, description: "When deposit payments are set, customers will be required to pay a certain amount during the booking, while the remaining balance can be paid on the spot. Trafft allows you to add fixed or variable prices for deposits and enables deposit options for all services or individual ones." },
+  { title: "Appointment Button", image: createAppointmentImg, description: "Create an appointment by selecting a service, employee, available date and time slot, location, and customer." },
+  { title: "Custom Services", image: createServiceImg, description: "Create services by adding name, category and description, select employee, duration and price, and customize the appearance by choosing color and adding service image." },
+  { title: "Client Panel", image: servicePanelImg, description: "Managing multiple services and service categories is effortless with Trafft. You have the flexibility to edit the appearance, locations, duration, price, taxes, and even create hidden (private) services for specific needs." },
 ];
 
 const BookingTestimonials = () => {
@@ -126,11 +126,22 @@ const BookingTestimonials = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((item, index) => (
-            <div key={index} className="bg-[#eef4ff] rounded-lg overflow-hidden shadow-sm text-black transition-transform duration-300 transform hover:scale-105 hover:shadow-xl cursor-pointer">
-              <div className="h-[180px] bg-white flex items-center justify-center overflow-hidden">
-                <img src={item.image} alt={item.title} className="object-contain h-full w-full" />
+            <div key={index} className="relative group bg-[#eef4ff] rounded-xl overflow-hidden shadow-md text-black transition-transform duration-300 transform hover:scale-105 cursor-pointer">
+              {/* Image Container */}
+              <div className="h-[200px] bg-white flex items-center justify-center overflow-hidden">
+                <img src={item.image} alt={item.title} className="object-contain h-full w-full transition-transform duration-300 group-hover:scale-105" />
               </div>
-              <div className="p-4 font-medium text-center">{item.title}</div>
+
+              {/* Title */}
+              <div className="p-4 font-semibold text-center">{item.title}</div>
+
+              {/* Hover Description Layer */}
+              <div className="absolute inset-0 bg-white/90 px-4 py-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between rounded-xl text-sm text-gray-800">
+                <div>
+                  <h4 className="font-bold text-base mb-2">{item.title}</h4>
+                  <p className="leading-relaxed">{item.description}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>

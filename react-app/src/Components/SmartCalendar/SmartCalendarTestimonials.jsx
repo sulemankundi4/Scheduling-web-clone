@@ -58,14 +58,14 @@ const reviews = [
 ];
 
 const features = [
-  { title: "Auto Detect Time Zone", image: autoDetectTimezone },
-  { title: "Add Appointment to Calendar for customers", image: addAppt },
-  { title: "Recurring Appointments", image: recurintAppt },
-  { title: "Managing Appointments", image: managinAppt },
-  { title: "Multiple Locations", image: multipleLocations },
-  { title: "Rescheduling and Canceling", image: rescheduling },
-  { title: "Special Days", image: specialDays },
-  { title: "Extras", image: extraServices },
+  { title: "Auto Detect Time Zone", image: autoDetectTimezone, description: "Trafft detects the time zone from your customers' computers, ensuring that available slots are displayed in their local time. Meanwhile, you can view the slots in your own time zone." },
+  { title: "Add Appointment to Calendar for customers", image: addAppt, description: "After scheduling an appointment, customers can conveniently add the details to their calendars by clicking on the 'add to calendar' button. The appointment will automatically be added to their Google, Outlook, or iCal calendars." },
+  { title: "Recurring Appointments", image: recurintAppt, description: "Recurring Appointments feature enables customers to easily book appointments that repeat. They can select the date and time for the first appointment and then specify the type of recurrence and the number of repeats, all in a single booking process." },
+  { title: "Managing Appointments", image: managinAppt, description: "From the admin page, you can easily create, browse, and edit appointments, as well as change their statuses. Exporting data of your appointments or customers is also a simple process." },
+  { title: "Multiple Locations", image: multipleLocations, description: "With Trafft, managing businesses across multiple locations, even in different cities or time zones, is a breeze. You can efficiently handle all locations within a single tool, while employees have the flexibility to work in various places." },
+  { title: "Rescheduling and Canceling", image: rescheduling, description: "Customer profiles and email notifications offer convenient options for customers to cancel or reschedule appointments with just a few clicks. This reduces no-shows and ensures smooth appointment management." },
+  { title: "Special Days", image: specialDays, description: "The special days feature allows you to set customized working schedules for specific employees on one or more days. This overrides the employees' general working schedules, ensuring flexibility when needed." },
+  { title: "Extras", image: extraServices, description: "To provide additional services and up-sell to your clients, you can add Extras to your existing services. Extras can extend the duration, increase the price, or even be offered for free without affecting the allotted time." },
 ];
 
 const SmartCalendarTestimonials = () => {
@@ -126,11 +126,22 @@ const SmartCalendarTestimonials = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((item, index) => (
-            <div key={index} className="bg-[#eef4ff] rounded-lg overflow-hidden shadow-sm text-black transition-transform duration-300 transform hover:scale-105 hover:shadow-xl cursor-pointer">
-              <div className="h-[180px] bg-white flex items-center justify-center overflow-hidden">
-                <img src={item.image} alt={item.title} className="object-contain h-full w-full" />
+            <div key={index} className="relative group bg-[#eef4ff] rounded-xl overflow-hidden shadow-md text-black transition-transform duration-300 transform hover:scale-105 cursor-pointer">
+              {/* Image Container */}
+              <div className="h-[200px] bg-white flex items-center justify-center overflow-hidden">
+                <img src={item.image} alt={item.title} className="object-contain h-full w-full transition-transform duration-300 group-hover:scale-105" />
               </div>
-              <div className="p-4 font-medium text-center">{item.title}</div>
+
+              {/* Title */}
+              <div className="p-4 font-semibold text-center">{item.title}</div>
+
+              {/* Hover Description Layer */}
+              <div className="absolute inset-0 bg-white/90 px-4 py-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between rounded-xl text-sm text-gray-800">
+                <div>
+                  <h4 className="font-bold text-base mb-2">{item.title}</h4>
+                  <p className="leading-relaxed">{item.description}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>

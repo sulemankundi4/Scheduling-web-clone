@@ -58,14 +58,14 @@ const reviews = [
 ];
 
 const features = [
-  { title: "Paypal", image: paypal },
-  { title: "Stripe", image: stripe },
-  { title: "Mollie", image: mollie },
-  { title: "Authorize.net", image: authorizenet },
-  { title: "Invoicely", image: invoicely },
-  { title: "Dashboard", image: dashboard },
-  { title: "Taxes", image: taxe },
-  { title: "Deposit Payments", image: depositImg },
+  { title: "Paypal", image: paypal, description: "Allow your customers to make quick payments with PayPal at the moment of booking with just one click, ensuring a seamless payment experience." },
+  { title: "Stripe", image: stripe, description: "By enabling and integrating Stripe, businesses can leverage its robust APIs to accept payments. If you enable and integrate Stripe, your customers will be able to pay with any credit or debit card at the moment of booking." },
+  { title: "Mollie", image: mollie, description: "Seamlessly accept online payments from customers during the booking process through Trafft's integration with the Mollie payment gateway. Please note that Mollie supports transactions in Euro currency only." },
+  { title: "Authorize.net", image: authorizenet, description: "With Authorize.net integration, you can accept credit cards, contactless payments, and eChecks in person and on the go. Integrate with Trafft to provide customers with the convenience of paying when booking their appointments." },
+  { title: "Invoicely", image: invoicely, description: "Export invoices or send them directly to customers once they have completed payment for services. Choose from four invoice templates, customize them with your logo and colors, and adjust settings such as invoice title and number. The invoice page provides a comprehensive list of all transactions conducted in Trafft." },
+  { title: "Dashboard", image: dashboard, description: "The KPI Dashboard provides insights into your business's performance. Widgets display key metrics such as the number of new customers, revenue generated during a specific period, employee occupancy, daily occupancy, and other important data for a successful business." },
+  { title: "Taxes", image: taxe, description: "From the admin dashboard, easily create and manage taxes related to your service prices. Add taxes to the price or include taxes within the price, and specify whether the tax should be set as default, applied to all services, or applied to all extras." },
+  { title: "Deposit Payments", image: depositImg, description: "When deposit payments are set, customers will be required to pay a certain amount during the booking, while the remaining balance can be paid on the spot. Trafft allows you to add fixed or variable prices for deposits and enables deposit options for all services or individual ones." },
 ];
 
 const PaymentProcessingTestomonials = () => {
@@ -126,11 +126,22 @@ const PaymentProcessingTestomonials = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((item, index) => (
-            <div key={index} className="bg-[#eef4ff] rounded-lg overflow-hidden shadow-sm text-black transition-transform duration-300 transform hover:scale-105 hover:shadow-xl cursor-pointer">
-              <div className="h-[180px] bg-white flex items-center justify-center overflow-hidden">
-                <img src={item.image} alt={item.title} className="object-contain h-full w-full" />
+            <div key={index} className="relative group bg-[#eef4ff] rounded-xl overflow-hidden shadow-md text-black transition-transform duration-300 transform hover:scale-105 cursor-pointer">
+              {/* Image Container */}
+              <div className="h-[200px] bg-white flex items-center justify-center overflow-hidden">
+                <img src={item.image} alt={item.title} className="object-contain h-full w-full transition-transform duration-300 group-hover:scale-105" />
               </div>
-              <div className="p-4 font-medium text-center">{item.title}</div>
+
+              {/* Title */}
+              <div className="p-4 font-semibold text-center">{item.title}</div>
+
+              {/* Hover Description Layer */}
+              <div className="absolute inset-0 bg-white/90 px-4 py-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between rounded-xl text-sm text-gray-800">
+                <div>
+                  <h4 className="font-bold text-base mb-2">{item.title}</h4>
+                  <p className="leading-relaxed">{item.description}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>

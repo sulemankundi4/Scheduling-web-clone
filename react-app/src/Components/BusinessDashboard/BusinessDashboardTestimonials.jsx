@@ -57,14 +57,14 @@ const reviews = [
 ];
 
 const features = [
-  { title: "Number Of Customers", image: newCustomer },
-  { title: "Daily Team Occupancy", image: digitalTeam },
-  { title: "Generated Revenue", image: revenue },
-  { title: "Occupancy Rate", image: revenue },
-  { title: "Percentage of Returning Customers", image: percentageCustomers },
-  { title: "Number of Booked Appointments", image: bookedAppts },
-  { title: "Number of Canceled Appointments", image: cancelledAppts },
-  { title: "Employee and Service Performance", image: EmployeeService },
+  { title: "Number Of Customers", image: newCustomer, description: "Discover the number of new customers who have booked appointments with you in the past six months." },
+  { title: "Daily Team Occupancy", image: digitalTeam, description: "Monitor the precise occupancy rate for each team member on a daily basis throughout the month." },
+  { title: "Generated Revenue", image: revenue, description: "View the revenue generated within your specified timeframe using the Date picker tool. Choose to see the total of paid transactions, pending payments, or the combined total of both." },
+  { title: "Occupancy Rate", image: revenue, description: "The occupancy rate is calculated by comparing the total working hours of each employee to the hours booked through appointments. Select the desired period to see the occupancy rate." },
+  { title: "Percentage of Returning Customers", image: percentageCustomers, description: "Determine the percentage of returning customers who have booked multiple appointments with you during the specified period, and assess your overall retention rate." },
+  { title: "Number of Booked Appointments", image: bookedAppts, description: "Discover the overall number of appointments booked for all employees within your specified timeframe." },
+  { title: "Number of Canceled Appointments", image: cancelledAppts, description: "Find out the number of appointments that were canceled by customers during the specified period." },
+  { title: "Employee and Service Performance", image: EmployeeService, description: "The performance section shows the top three employees and services based on the highest or lowest occupancy rate. You can choose to sort by the most occupied or the least occupied." },
 ];
 
 const BusinessDashboardTestimonials = () => {
@@ -115,11 +115,22 @@ const BusinessDashboardTestimonials = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((item, index) => (
-            <div key={index} className="bg-[#eef4ff] rounded-lg overflow-hidden shadow-sm text-black transition-transform duration-300 transform hover:scale-105 hover:shadow-xl cursor-pointer">
-              <div className="h-[180px] bg-white flex items-center justify-center overflow-hidden">
-                <img src={item.image} alt={item.title} className="object-contain h-full w-full" />
+            <div key={index} className="relative group bg-[#eef4ff] rounded-xl overflow-hidden shadow-md text-black transition-transform duration-300 transform hover:scale-105 cursor-pointer">
+              {/* Image Container */}
+              <div className="h-[200px] bg-white flex items-center justify-center overflow-hidden">
+                <img src={item.image} alt={item.title} className="object-contain h-full w-full transition-transform duration-300 group-hover:scale-105" />
               </div>
-              <div className="p-4 font-medium text-center">{item.title}</div>
+
+              {/* Title */}
+              <div className="p-4 font-semibold text-center">{item.title}</div>
+
+              {/* Hover Description Layer */}
+              <div className="absolute inset-0 bg-white/90 px-4 py-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between rounded-xl text-sm text-gray-800">
+                <div>
+                  <h4 className="font-bold text-base mb-2">{item.title}</h4>
+                  <p className="leading-relaxed">{item.description}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>

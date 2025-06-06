@@ -59,14 +59,14 @@ const reviews = [
 ];
 
 const features = [
-  { title: "Google Calendar", image: googleCalnd },
-  { title: "Outlook Calendar", image: outlookCalend },
-  { title: "Customer Profile", image: customerProfile },
-  { title: "Email notifications", image: emailFeatureCard },
-  { title: "Customer List", image: customerList },
-  { title: "Statistics", image: dashboard },
-  { title: "Unlimited Customer", image: unlimitedCustomer },
-  { title: "SMS notifications", image: smsFeatures },
+  { title: "Google Calendar", image: googleCalnd, description: "Sync your and your employees' personal and professional events by connecting Google calendars. Appointments booked in Trafft will be added to Google calendars, and Google calendar's busy slots will not be available for booking in Trafft." },
+  { title: "Outlook Calendar", image: outlookCalend, description: "Sync your and your employees' personal and professional events by connecting Outlook calendars. Appointments booked in Trafft will be added to Outlook calendars, and Outlook calendar's busy slots will not be available for booking in Trafft." },
+  { title: "Customer Profile", image: customerProfile, description: "Your clients can create profiles by clicking on the Login button in the upper right corner of your booking website. Under their customer profile, they can easily manage their appointments." },
+  { title: "Email notifications", image: emailFeatureCard, description: "Configure and customize your email notifications to suit your needs. Edit notifications for upcoming appointments, appointment follow-ups, status changes, and more." },
+  { title: "Customer List", image: customerList, description: "Create a list of all of your customers with details like names, email addresses, number and dates of booked appointments, the first created appointment, etc. Edit, delete or export the list to a CSV file." },
+  { title: "Statistics", image: dashboard, description: "Monitor your business performance with the Trafft dashboard that provides you with different information like the number of returning and new customers, employee and service performance, occupancy, revenue, etc." },
+  { title: "Unlimited Customer", image: unlimitedCustomer, description: "Admin and employees can manage customers, edit their info, keep track of loyal customers and export and import lists of customers." },
+  { title: "SMS notifications", image: smsFeatures, description: "Configure and customize your SMS notifications to suit your needs. Edit notifications for upcoming appointments, appointment follow-ups, status changes, and more." },
 ];
 
 const CustomerManagementTestomonials = () => {
@@ -127,11 +127,22 @@ const CustomerManagementTestomonials = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((item, index) => (
-            <div key={index} className="bg-[#eef4ff] rounded-lg overflow-hidden shadow-sm text-black transition-transform duration-300 transform hover:scale-105 hover:shadow-xl cursor-pointer">
-              <div className="h-[180px] bg-white flex items-center justify-center overflow-hidden">
-                <img src={item.image} alt={item.title} className="object-contain h-full w-full" />
+            <div key={index} className="relative group bg-[#eef4ff] rounded-xl overflow-hidden shadow-md text-black transition-transform duration-300 transform hover:scale-105 cursor-pointer">
+              {/* Image Container */}
+              <div className="h-[200px] bg-white flex items-center justify-center overflow-hidden">
+                <img src={item.image} alt={item.title} className="object-contain h-full w-full transition-transform duration-300 group-hover:scale-105" />
               </div>
-              <div className="p-4 font-medium text-center">{item.title}</div>
+
+              {/* Title */}
+              <div className="p-4 font-semibold text-center">{item.title}</div>
+
+              {/* Hover Description Layer */}
+              <div className="absolute inset-0 bg-white/90 px-4 py-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between rounded-xl text-sm text-gray-800">
+                <div>
+                  <h4 className="font-bold text-base mb-2">{item.title}</h4>
+                  <p className="leading-relaxed">{item.description}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>

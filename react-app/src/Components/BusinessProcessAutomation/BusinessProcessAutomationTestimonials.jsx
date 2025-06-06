@@ -58,14 +58,14 @@ const reviews = [
 ];
 
 const features = [
-  { title: "Email", image: EmailCard },
-  { title: "SMS", image: smsCard },
-  { title: "Whatsapp", image: whatsappCard },
-  { title: "Google Calendar", image: googleCalendarCard },
-  { title: "Outlook Calendar", image: outLookCard },
-  { title: "Mailchimp", image: mailChimpCard },
-  { title: "SendFox", image: sendFox },
-  { title: "Zapier", image: zapierCard },
+  { title: "Email", image: EmailCard, description: "Configure and customize your email notifications to suit your needs. Edit notifications for upcoming appointments, appointment follow-ups, status changes, and more." },
+  { title: "SMS", image: smsCard, description: "Configure and customize your SMS notifications to suit your needs. Edit notifications for upcoming appointments, appointment follow-ups, status changes, and more." },
+  { title: "Whatsapp", image: whatsappCard, description: "Trafft’s integration with WhatsApp allows you to send your customers and employees notifications about upcoming appointments through WhatsApp. This integration will help you retain your customers and reduce no-shows." },
+  { title: "Google Calendar", image: googleCalendarCard, description: "Sync your and your employees' personal and professional events by connecting Google calendars. Appointments booked in Trafft will be added to Google calendars, and Google calendar's busy slots will not be available for booking in Trafft." },
+  { title: "Outlook Calendar", image: outLookCard, description: "Sync your and your employees' personal and professional events by connecting Outlook calendars. Appointments booked in Trafft will be added to Outlook calendars, and Outlook calendar's busy slots will not be available for booking in Trafft." },
+  { title: "Mailchimp", image: mailChimpCard, description: "With just a few clicks, you can effortlessly send customer data, including names and emails, directly from your Trafft account to MailChimp. This integration enables you to leverage lead nurturing and retention strategies effectively." },
+  { title: "SendFox", image: sendFox, description: "Grow your audience and create targeted email campaigns in SendFox. Automatically transfer customers' data from Trafft to SendFox." },
+  { title: "Zapier", image: zapierCard, description: "Use integration with Zapier to connect with any other third-party application supported by Zapier and send data after events in Trafft such as booking the appointment, rescheduling, etc." },
 ];
 
 const BusinessProcessAutomationTestimonials = () => {
@@ -126,11 +126,22 @@ const BusinessProcessAutomationTestimonials = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((item, index) => (
-            <div key={index} className="bg-[#eef4ff] rounded-lg overflow-hidden shadow-sm text-black transition-transform duration-300 transform hover:scale-105 hover:shadow-xl cursor-pointer">
-              <div className="h-[180px] bg-white flex items-center justify-center overflow-hidden">
-                <img src={item.image} alt={item.title} className="object-contain h-full w-full" />
+            <div key={index} className="relative group bg-[#eef4ff] rounded-xl overflow-hidden shadow-md text-black transition-transform duration-300 transform hover:scale-105 cursor-pointer">
+              {/* Image Container */}
+              <div className="h-[200px] bg-white flex items-center justify-center overflow-hidden">
+                <img src={item.image} alt={item.title} className="object-contain h-full w-full transition-transform duration-300 group-hover:scale-105" />
               </div>
-              <div className="p-4 font-medium text-center">{item.title}</div>
+
+              {/* Title */}
+              <div className="p-4 font-semibold text-center">{item.title}</div>
+
+              {/* Hover Description Layer */}
+              <div className="absolute inset-0 bg-white/90 px-4 py-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between rounded-xl text-sm text-gray-800">
+                <div>
+                  <h4 className="font-bold text-base mb-2">{item.title}</h4>
+                  <p className="leading-relaxed">{item.description}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
