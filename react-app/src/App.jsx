@@ -10,6 +10,8 @@ import BusinessDashboard from "./Pages/BusinessDashboard";
 import SmartCalendar from "./Pages/SmartCalendar";
 import BeautySalon from "./Pages/BeautySalon";
 import CleaningService from "./Pages/CleaningService";
+import BarberShop from "./Pages/BarberShop";
+import FitnessAndSports from "./Pages/FitnessAndSports";
 function App() {
   return (
     <Router>
@@ -23,6 +25,8 @@ function App() {
         <Route path="/smart-calendar-and-scheduling" element={<SmartCalendar />} />
         <Route path="/beauty-salon" element={<BeautySalon />} />
         <Route path="/cleaning-service" element={<CleaningService />} />
+        <Route path="/barber-shop" element={<BarberShop />} />
+        <Route path="/fitness-and-sports" element={<FitnessAndSports />} />
       </Routes>
     </Router>
   );
