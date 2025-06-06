@@ -47,7 +47,9 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           {/* Logo (always visible) */}
           <div className="lg:hidden text-2xl font-bold flex items-center space-x-2">
-            <img src={logo} alt="Trafft" className="w-50 h-12 object-contain" />
+            <Link to="/">
+              <img src={logo} alt="Trafft" className="w-50 h-12 object-contain" />
+            </Link>
           </div>
           {/* Mobile Menu Button */}
           <div className="lg:hidden">
@@ -61,7 +63,9 @@ const Navbar = () => {
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <img src={logo} alt="Trafft" className="w-50 h-12 object-contain" />
+            <Link to="/">
+              <img src={logo} alt="Trafft" className="w-50 h-12 object-contain" />
+            </Link>
           </div>
           <nav className="flex space-x-8 text-sm items-center">
             <Link to="/" className="font-semibold hover:text-yellow-400 transition">
@@ -95,7 +99,9 @@ const Navbar = () => {
         <div className={`fixed top-0 right-0 h-full w-72 bg-[#050F2C] text-sm z-50 shadow-lg transform transition-transform duration-300 ease-in-out ${menuOpen ? "translate-x-0" : "translate-x-full"} lg:hidden`} style={{ maxWidth: "90vw" }}>
           {/* Logo at the top */}
           <div className="flex items-center space-x-2 px-4 py-4 border-b border-white/10">
-            <img src={logo} alt="Trafft" className="w-50 h-12 object-contain" />
+            <Link to="/">
+              <img src={logo} alt="Trafft" className="w-50 h-12 object-contain" />
+            </Link>
             <button className="ml-auto" onClick={() => setMenuOpen(false)}>
               <X size={24} />
             </button>
