@@ -146,15 +146,19 @@ const Services = () => {
 
   return (
     <>
-      <section className="bg-[#050F2C] text-white py-20 px-4">
+      <section className="bg-[#050F2C] text-white py-20 px-4 overflow-x-hidden">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">All service-based businesses can benefit from Trafft</h2>
-          <p className="text-center text-gray-400 max-w-3xl mx-auto mb-12">Trafft is simple yet powerful appointment scheduling software flexible enough to adapt to different industries and business types.</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4" data-aos="fade-up" data-aos-duration="1000">
+            All service-based businesses can benefit from Trafft
+          </h2>
+          <p className="text-center text-gray-400 max-w-3xl mx-auto mb-12" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+            Trafft is simple yet powerful appointment scheduling software flexible enough to adapt to different industries and business types.
+          </p>
 
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Left Buttons */}
             <div className="flex flex-col gap-3 w-full lg:w-64">
-              {SERVICES.map((service) => (
+              {SERVICES.map((service, index) => (
                 <button
                   key={service.id}
                   onClick={() => setActive(service)}
@@ -170,7 +174,7 @@ const Services = () => {
             {/* Right Cards */}
             <div className="grid gap-6 sm:grid-cols-2 flex-1">
               {active.cards.map((card, index) => (
-                <div key={index} className="bg-[#0B143D] rounded-xl p-6 hover:scale-[1.02] transition-all duration-300 border border-white/5 flex flex-col gap-2">
+                <div key={index} className="bg-[#0B143D] rounded-xl p-6 hover:scale-[1.02] transition-all duration-300 border border-white/5 flex flex-col gap-2" data-aos="flip-up" data-aos-duration="800" data-aos-delay={150 * index}>
                   <div className="text-blue-400">{card.icon}</div>
                   <h3 className="text-lg font-semibold text-white">{card.title}</h3>
                   <p className="text-sm text-gray-400">{card.text}</p>
@@ -180,81 +184,73 @@ const Services = () => {
           </div>
 
           {/* Explore Button */}
-          <div className="text-center mt-12">
+          <div className="text-center mt-12" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
             <button className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-semibold transition text-white text-sm">Explore {active.label}</button>
           </div>
         </div>
       </section>
 
       <section
-        className="relative text-white py-24 bg-cover bg-center bg-no-repeat"
+        className="relative text-white py-24 bg-cover bg-center bg-no-repeat overflow-x-hidden"
         style={{
           backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${bgImage})`,
           backgroundAttachment: "fixed",
           backgroundPosition: "center",
         }}
       >
-        {/* <div className="bg-black/50 absolute inset-0 z-0" /> Optional overlay */}
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-3xl sm:text-5xl font-bold mb-4 leading-snug">Trusted by thousands of companies</h2>
-          <p className="text-3xl sm:text-5xl font-medium mb-16">around the world</p>
+          <h2 className="text-3xl sm:text-5xl font-bold mb-4 leading-snug" data-aos="fade-up" data-aos-duration="1000">
+            Trusted by thousands of companies
+          </h2>
+          <p className="text-3xl sm:text-5xl font-medium mb-16" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+            around the world
+          </p>
 
           <div className="flex flex-col sm:flex-row justify-center items-center gap-12">
-            <div className="text-center max-w-xs">
-              <h3 className="text-5xl font-bold mb-2">50k+</h3>
-              <p className="text-base sm:text-lg">Businesses and individual entrepreneurs from a variety of industries use our booking software solutions.</p>
-            </div>
-            <div className="text-center max-w-xs">
-              <h3 className="text-5xl font-bold mb-2">8m+</h3>
-              <p className="text-base sm:text-lg">Appointments and events worldwide have been processed with the help of our appointment booking software.</p>
-            </div>
-            <div className="text-center max-w-xs">
-              <h3 className="text-5xl font-bold mb-2">$1.5m+</h3>
-              <p className="text-base sm:text-lg">Worth of online payments for bookings is being processed via our online booking software monthly.</p>
-            </div>
+            {[
+              { number: "50k+", text: "Businesses and individual entrepreneurs from a variety of industries use our booking software solutions." },
+              { number: "8m+", text: "Appointments and events worldwide have been processed with the help of our appointment booking software." },
+              { number: "$1.5m+", text: "Worth of online payments for bookings is being processed via our online booking software monthly." },
+            ].map((stat, index) => (
+              <div key={index} className="text-center max-w-xs" data-aos="fade-up" data-aos-duration="1000" data-aos-delay={300 * (index + 1)}>
+                <h3 className="text-5xl font-bold mb-2">{stat.number}</h3>
+                <p className="text-base sm:text-lg">{stat.text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-[#050F2C] text-white py-20 px-8">
-        <div className="max-w-7xl mx-auto bg-[#0A153A] rounded-2xl p-20 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Design a booking website that matches your brand</h2>
-          <p className="text-gray-300 max-w-2xl mx-auto mb-10 text-sm sm:text-base">Trafft comes with dark and light mode and eight base themes that you can further fine-tune and customize to make the look & feel of the booking process completely unique.</p>
+      <section className="bg-[#050F2C] text-white py-20 px-8 overflow-x-hidden">
+        <div className="max-w-7xl mx-auto bg-[#0A153A] rounded-2xl p-20 text-center" data-aos="fade-up" data-aos-duration="1000">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+            Design a booking website that matches your brand
+          </h2>
+          <p className="text-gray-300 max-w-2xl mx-auto mb-10 text-sm sm:text-base" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+            Trafft comes with dark and light mode and eight base themes that you can further fine-tune and customize to make the look & feel of the booking process completely unique.
+          </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-            <div className="rounded overflow-hidden shadow-lg">
-              <img src={brand1} alt="Theme 1" className="w-full" />
-            </div>
-            <div className="rounded overflow-hidden shadow-lg">
-              <img src={brand2} alt="Theme 2" className="w-full" />
-            </div>
-            <div className="rounded overflow-hidden shadow-lg">
-              <img src={brand3} alt="Theme 3" className="w-full" />
-            </div>
-            <div className="rounded overflow-hidden shadow-lg">
-              <img src={brand4} alt="Theme 4" className="w-full" />
-            </div>
-            <div className="rounded overflow-hidden shadow-lg">
-              <img src={brand5} alt="Theme 5" className="w-full" />
-            </div>
-            <div className="rounded overflow-hidden shadow-lg">
-              <img src={brand6} alt="Theme 6" className="w-full" />
-            </div>
-            <div className="rounded overflow-hidden shadow-lg">
-              <img src={brand7} alt="Theme 7" className="w-full" />
-            </div>
-            <div className="rounded overflow-hidden shadow-lg">
-              <img src={brand8} alt="Theme 8" className="w-full" />
-            </div>
+            {[brand1, brand2, brand3, brand4, brand5, brand6, brand7, brand8].map((brand, index) => (
+              <div key={index} className="rounded overflow-hidden shadow-lg" data-aos="zoom-in" data-aos-duration="800" data-aos-delay={100 * (index + 1)}>
+                <img src={brand} alt={`Theme ${index + 1}`} className="w-full" />
+              </div>
+            ))}
           </div>
 
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold text-sm transition">Get started for free</button>
+          <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold text-sm transition" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+            Get started for free
+          </button>
         </div>
       </section>
 
       <section className="bg-[#050F2C] text-white py-20 px-4">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">Watch your business evolve</h2>
-        <p className="text-center text-gray-400 max-w-3xl mx-auto mb-12">Offer on-site or virtual appointments, manage staff and services, process payments, send invoices and reminders - all in one small business scheduling software.</p>
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4" data-aos="fade-up" data-aos-duration="1000">
+          Watch your business evolve
+        </h2>
+        <p className="text-center text-gray-400 max-w-3xl mx-auto mb-12" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+          Offer on-site or virtual appointments, manage staff and services, process payments, send invoices and reminders - all in one small business scheduling software.
+        </p>
 
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12">
           {/* Left Text Sections */}
@@ -269,7 +265,12 @@ const Services = () => {
 
           {/* Right Image Preview */}
           <div className="w-full lg:w-1/2 sticky top-24 h-[600px] flex items-center justify-center">
-            <img src={activeImage} alt="Preview" className="rounded-xl shadow-lg transition-all duration-700 ease-in-out max-h-full object-contain transform hover:scale-105" />
+            <img
+              src={activeImage}
+              alt="Preview"
+              className="rounded-xl shadow-lg transition-all duration-700 ease-in-out max-h-full object-contain transform hover:scale-105"
+              key={activeImage} // Force re-animation on image change
+            />
           </div>
         </div>
       </section>

@@ -30,25 +30,29 @@ const TestimonialSection = () => {
   return (
     <>
       <section className="bg-[#050F2C] text-white py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center" data-aos="fade-up" data-aos-duration="1000">
           <Swiper modules={[Navigation, Pagination, Autoplay]} navigation pagination={{ clickable: true }} loop autoplay={{ delay: 5000 }} spaceBetween={30} slidesPerView={1} className="w-full">
             {testimonials.map((testimonial, index) => (
               <SwiperSlide key={index}>
                 <div className="bg-[#0A153A] text-white rounded-xl px-8 py-10 max-w-3xl mx-auto shadow-xl min-h-[400px] flex flex-col justify-center transition-all duration-300">
-                  <div className="flex justify-center mb-4">
+                  <div className="flex justify-center mb-4" data-aos="zoom-in" data-aos-duration="800">
                     <div className="bg-blue-600 p-4 rounded-full">
                       <User size={32} />
                     </div>
                   </div>
-                  <h3 className="font-semibold text-lg mb-2">{testimonial.name}</h3>
-                  <div className="flex justify-center mb-4 text-yellow-400">
+                  <h3 className="font-semibold text-lg mb-2" data-aos="fade-up" data-aos-delay="200">
+                    {testimonial.name}
+                  </h3>
+                  <div className="flex justify-center mb-4 text-yellow-400" data-aos="fade-up" data-aos-delay="300">
                     {Array(5)
                       .fill(0)
                       .map((_, i) => (
                         <Star key={i} size={16} fill="#facc15" stroke="#facc15" className="mx-[1px]" />
                       ))}
                   </div>
-                  <p className="text-base text-gray-200 leading-relaxed max-w-2xl mx-auto">{testimonial.content}</p>
+                  <p className="text-base text-gray-200 leading-relaxed max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="400">
+                    {testimonial.content}
+                  </p>
                 </div>
               </SwiperSlide>
             ))}
@@ -58,32 +62,32 @@ const TestimonialSection = () => {
 
       <section className="bg-[#050F2C] py-12">
         <div className="max-w-6xl mx-auto text-center px-4">
-          <h3 className="text-gray-400 text-4xl font-medium mb-10">Featured on</h3>
+          <h3 className="text-gray-400 text-4xl font-medium mb-10" data-aos="fade-up" data-aos-duration="1000">
+            Featured on
+          </h3>
           <div className="flex flex-wrap justify-center items-center gap-8">
             {logos.map((logo, index) => (
-              <img key={index} src={logo} alt={`Logo ${index + 1}`} className="h-8 opacity-70 hover:opacity-100 cursor-pointer transition" />
+              <img key={index} src={logo} alt={`Logo ${index + 1}`} className="h-8 opacity-70 hover:opacity-100 cursor-pointer transition" data-aos="zoom-in" data-aos-duration="800" data-aos-delay={100 * (index + 1)} />
             ))}
           </div>
         </div>
       </section>
 
       <section className="bg-[#050F2C] text-white py-20 px-4 text-center">
-        <h2 className="text-3xl sm:text-5xl font-bold mb-6">
+        <h2 className="text-3xl sm:text-5xl font-bold mb-6" data-aos="fade-up" data-aos-duration="1000">
           The most intuitive and easy-to-use <br />
           online booking system
         </h2>
-        <p className="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">No training is needed to use Trafft. You and your customers will love how simple it is to use this appointment scheduling tool</p>
+        <p className="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+          No training is needed to use Trafft. You and your customers will love how simple it is to use this appointment scheduling tool
+        </p>
       </section>
 
       <section className="bg-[#050F2C] py-20 px-4">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
           {/* Image takes more width */}
-          <div className="w-full lg:w-7/12">
-            <img
-              src={bookingIcon} // Replace with your image path
-              alt="Appointment Booking"
-              className="w-full h-auto rounded-xl shadow-2xl"
-            />
+          <div className="w-full lg:w-7/12" data-aos="fade-right" data-aos-duration="1000">
+            <img src={bookingIcon} alt="Appointment Booking" className="w-full h-auto rounded-xl shadow-2xl" />
           </div>
 
           {/* Feature Cards take less space */}
@@ -108,7 +112,7 @@ const TestimonialSection = () => {
                 ),
               },
             ].map((item, i) => (
-              <div key={i} className="bg-[#0A153A] p-6 rounded-2xl shadow-md hover:shadow-xl transform hover:scale-[1.03] transition-all duration-300">
+              <div key={i} className="bg-[#0A153A] p-6 rounded-2xl shadow-md hover:shadow-xl transform hover:scale-[1.03] transition-all duration-300" data-aos="flip-left" data-aos-duration="1000" data-aos-delay={300 * (i + 1)}>
                 <div className="flex items-start gap-4">
                   <div className="bg-[#1D2442] p-3 rounded-lg">{item.icon}</div>
                   <div>
