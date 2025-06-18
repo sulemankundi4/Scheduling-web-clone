@@ -8,7 +8,7 @@ const HeroSection = () => {
   return (
     <>
       <section
-        className="relative bg-[#02042C] sm:pb-12 lg:pb-0 text-white overflow-hidden"
+        className="relative bg-[#02042C] pb-12 lg:pb-0 text-white overflow-hidden"
         style={{
           backgroundImage: `url(${heroBg})`,
           backgroundSize: "cover",
@@ -16,7 +16,7 @@ const HeroSection = () => {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="max-w-7xl mx-auto px-6 sm:pt-4 lg:pt-24 pb-24 flex flex-col-reverse lg:flex-row items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 pt-16 lg:pt-24 pb-24 flex flex-col-reverse lg:flex-row items-center justify-between">
           {/* Left Content */}
           <div className="lg:w-1/2 text-center lg:text-left" data-aos="fade-right" data-aos-duration="1500">
             <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-6" data-aos="fade-up" data-aos-delay="200">
