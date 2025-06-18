@@ -48,7 +48,7 @@ const Navbar = () => {
           {/* Logo (always visible) */}
           <div className="lg:hidden text-2xl font-bold flex items-center space-x-2">
             <Link to="/">
-              <img src={logo} alt="Trafft" className="w-50 h-12 object-contain" />
+              <img src={logo} alt="Trafft" className="h-5 object-contain" />
             </Link>
           </div>
           {/* Mobile Menu Button */}
@@ -64,10 +64,10 @@ const Navbar = () => {
         <div className="hidden lg:flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <Link to="/">
-              <img src={logo} alt="Trafft" className="w-50 h-12 object-contain" />
+              <img src={logo} alt="Trafft" className="h-8 object-contain" />
             </Link>
           </div>
-          <nav className="flex space-x-8 text-sm items-center">
+          <nav className="flex space-x-8 text-base items-center">
             <Link to="/" className="font-semibold hover:text-yellow-400 transition">
               Home
             </Link>
@@ -95,59 +95,67 @@ const Navbar = () => {
           </nav>
         </div>
 
-        {/* Mobile Nav (slide in from right) */}
-        <div className={`fixed top-0 right-0 h-full w-72 bg-[#050F2C] text-sm z-50 shadow-lg transform transition-transform duration-300 ease-in-out ${menuOpen ? "translate-x-0" : "translate-x-full"} lg:hidden`} style={{ maxWidth: "90vw" }}>
-          {/* Logo at the top */}
-          <div className="flex items-center space-x-2 px-4 py-4 border-b border-white/10">
-            <Link to="/">
-              <img src={logo} alt="Trafft" className="w-50 h-12 object-contain" />
-            </Link>
-            <button className="ml-auto" onClick={() => setMenuOpen(false)}>
-              <X size={24} />
-            </button>
-          </div>
-
-          {/* Auth (optional, can be added back if needed) */}
-          {/* <div className="space-x-4 pb-3 flex justify-start items-center px-4">
-            <a href="#" className="hover:text-yellow-400">Log in</a>
-            <a href="#" className="hover:text-yellow-400">Sign up</a>
-          </div>
-          <hr className="border-white/10 mb-3" /> */}
-
-          {/* Home Link for Mobile */}
-          <div className="px-4 mb-3">
-            <Link to="/" className="block py-1 font-semibold hover:text-yellow-400 transition">
-              Home
-            </Link>
-          </div>
-
-          {/* Services Dropdown for Mobile (click to open/close) */}
-          <div className="px-4 mb-3">
-            <button className="font-semibold mb-1 flex items-center focus:outline-none hover:text-yellow-400" onClick={() => setDropdownOpen((open) => !open)}>
-              Services <span className="ml-1">▼</span>
-            </button>
-            {dropdownOpen && (
-              <div className="flex flex-col gap-1 mt-2 bg-white text-black rounded shadow-lg z-50">
-                {servicesLinks.map((item, idx) => (
-                  <Link key={idx} to={item.to} className="block py-1 px-4 hover:bg-gray-100 font-semibold" onClick={() => setDropdownOpen(false)}>
-                    {item.label}
-                  </Link>
-                ))}
+        {/* Mobile Sidebar Nav (like screenshot) */}
+        <div className={menuOpen ? "block" : "hidden"}>
+          {/* Backdrop */}
+          <div className={`fixed inset-0 bg-black/40 z-40 lg:hidden transition-opacity duration-300 ${menuOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`} onClick={() => setMenuOpen(false)}></div>
+          {/* Sidebar */}
+          <aside className={`fixed left-0 top-0 h-full w-72 max-w-[90vw] bg-white z-50 shadow-lg flex flex-col lg:hidden transition-transform duration-300 ${menuOpen ? "translate-x-0" : "-translate-x-full"}`}>
+            {/* Top bar: logo and close */}
+            <div className="flex items-center justify-between px-4 py-4">
+              <Link to="/" onClick={() => setMenuOpen(false)}>
+                <img src={logo} alt="Logo" className="h-5 object-contain" />
+              </Link>
+              <button className="text-2xl text-gray-700 hover:text-red-500 focus:outline-none" onClick={() => setMenuOpen(false)} aria-label="Close menu">
+                <X size={28} />
+              </button>
+            </div>
+            <hr className="my-2 border-gray-200" />
+            {/* Scrollable menu content */}
+            <nav className="flex-1 overflow-y-auto px-4 pb-6">
+              <Link to="/" className="block py-3 text-base font-semibold text-gray-900 hover:text-blue-600 transition" onClick={() => setMenuOpen(false)}>
+                Home
+              </Link>
+              {/* Services Dropdown for Mobile */}
+              <div>
+                <button className="w-full flex items-center justify-between py-3 text-base font-semibold text-gray-900 hover:text-blue-600 transition focus:outline-none" onClick={() => setDropdownOpen((open) => !open)}>
+                  <span>Services</span>
+                  <span className={`ml-2 text-lg transition-transform ${dropdownOpen ? "rotate-180" : ""}`}>▼</span>
+                </button>
+                <div className={`overflow-hidden transition-all duration-300 ${dropdownOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"}`}>
+                  {dropdownOpen && (
+                    <div className="flex flex-col bg-gray-50 rounded-md shadow-inner my-1">
+                      {servicesLinks.map((item, idx) => (
+                        <Link
+                          key={idx}
+                          to={item.to}
+                          className="block py-2 px-4 text-gray-800 hover:bg-blue-50 font-medium text-base rounded"
+                          onClick={() => {
+                            setDropdownOpen(false);
+                            setMenuOpen(false);
+                          }}
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
-            )}
-          </div>
-
-          {/* Main Links for Mobile */}
-          <div className="px-4 mb-3">
-            <div className="flex flex-col gap-1">
+              {/* Main Links for Mobile */}
               {mainLinks.map((item, idx) => (
-                <Link key={idx} to={item.to} className="block py-1 font-semibold hover:text-yellow-400 transition">
+                <Link key={idx} to={item.to} className="block py-3 text-base font-semibold text-gray-900 hover:text-blue-600 transition" onClick={() => setMenuOpen(false)}>
                   {item.label}
                 </Link>
               ))}
-            </div>
-          </div>
+            </nav>
+          </aside>
         </div>
+        <style>{`
+          @media (max-width: 1023px) {
+            .h-12 { height: 1.75rem !important; }
+          }
+        `}</style>
       </div>
     </header>
   );
