@@ -16,7 +16,7 @@ const HeroSection = () => {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="max-w-7xl mx-auto px-6 pt-16 lg:pt-24 pb-24 flex flex-col-reverse lg:flex-row items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 pt-24 lg:pt-42 pb-28 flex flex-col-reverse lg:flex-row items-center justify-between">
           {/* Left Content */}
           <div className="lg:w-1/2 text-center lg:text-left" data-aos="fade-right" data-aos-duration="1500">
             <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-6" data-aos="fade-up" data-aos-delay="200">

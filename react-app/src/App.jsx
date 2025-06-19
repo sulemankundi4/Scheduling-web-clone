@@ -12,6 +12,8 @@ import BeautySalon from "./Pages/BeautySalon";
 import CleaningService from "./Pages/CleaningService";
 import BarberShop from "./Pages/BarberShop";
 import FitnessAndSports from "./Pages/FitnessAndSports";
+import Faqs from "./Pages/Faqs";
+
 function App() {
   return (
     <Router>
@@ -27,6 +29,7 @@ function App() {
         <Route path="/cleaning-service" element={<CleaningService />} />
         <Route path="/barber-shop" element={<BarberShop />} />
         <Route path="/fitness-and-sports" element={<FitnessAndSports />} />
+        <Route path="/faqs" element={<Faqs />} />
       </Routes>
     </Router>
   );

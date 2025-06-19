@@ -9,7 +9,7 @@ const Hero = () => {
       <div className="bg-[#010a2c] text-white min-h-screen">
         <Navbar />
 
-        <div className="container mx-auto px-4 py-16 flex flex-col lg:flex-row items-center gap-12">
+        <div className="container mx-auto px-4 py-38 flex flex-col lg:flex-row items-center gap-12">
           {/* Left Content */}
           <div className="flex-1">
             <span className="inline-block bg-white text-[#010a2c] text-sm font-semibold rounded-full px-4 py-1 mb-4">Business dashboard</span>
