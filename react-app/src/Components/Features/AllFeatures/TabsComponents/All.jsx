@@ -29,6 +29,18 @@ import invoice from "../../../../assets/Images/Invoices.webp";
 import taxes from "../../../../assets/Images/taxes.webp";
 import employeeTime from "../../../../assets/Images/Employees Time Zone.webp";
 import companyDays from "../../../../assets/Images/Company Days Off.webp";
+//////////////////////////////////
+import multipleServices from "../../../../assets/Images/Multiple Services (Free).webp";
+import managingAppts from "../../../../assets/Images/Managing Appointments (Free).webp";
+import groupBooking from "../../../../assets/Images/Group Booking (PRO).webp";
+import extras from "../../../../assets/Images/Extras_(PRO).webp";
+import multipleLocations from "../../../../assets/Images/Multiple Locations (PRO).webp";
+import coupons from "../../../../assets/Images/Coupons (PRO).webp";
+import recurringAppts from "../../../../assets/Images/Recurring Appointments (PRO).webp";
+import rescheduling from "../../../../assets/Images/Rescheduling and Canceling.webp";
+import apptNotes from "../../../../assets/Images/Appointment Notes.webp";
+import depositPayment from "../../../../assets/Images/Deposit payment(Free).webp";
+import refundPayment from "../../../../assets/Images/Refund Option.webp";
 
 const All = () => {
   const bookingWebsiteAndFormBuilder = [
@@ -81,6 +93,20 @@ const All = () => {
     { title: "Company Days Off", image: companyDays, description: "Set global company days off that will be applied to all employees." },
   ];
 
+  const Appointments = [
+    { title: "Multiple Services", image: multipleServices, description: "Managing multiple services and service categories is effortless with Trafft. You have the flexibility to edit the appearance, locations, duration, price, taxes, and even create hidden (private) services for specific needs." },
+    { title: "Managing Appointments", image: managingAppts, description: "From the admin page, you can easily create, browse, and edit appointments, as well as change their statuses. Exporting data of your appointments or customers is also a simple process." },
+    { title: "Group Booking", image: groupBooking, description: "If you need to host sessions for groups, Trafft allows you to define the minimum and maximum available slots for each appointment, ensuring smooth group bookings." },
+    { title: "Extras", image: extras, description: "To provide additional services and up-sell to your clients, you can add Extras to your existing services. Extras can extend the duration, increase the price, or even be offered for free without affecting the allotted time." },
+    { title: "Multiple Locations", image: multipleLocations, description: "With Trafft, managing businesses across multiple locations, even in different cities or time zones, is a breeze. You can efficiently handle all locations within a single tool, while employees have the flexibility to work in various places." },
+    { title: "Coupons", image: coupons, description: "Offering discounts or free appointments to your customers is hassle-free with Trafft. Simply define the value of each coupon to provide exclusive deals." },
+    { title: "Recurring Appointments", image: recurringAppts, description: "Recurring Appointments feature enables customers to easily book appointments that repeat. They can select the date and time for the first appointment and then specify the type of recurrence and the number of repeats, all in a single booking process." },
+    { title: "Rescheduling and Canceling", image: rescheduling, description: "Customer profiles and email notifications offer convenient options for customers to cancel or reschedule appointments with just a few clicks. This reduces no-shows and ensures smooth appointment management." },
+    { title: "Appointment Notes", image: apptNotes, description: "Add notes about an appointment and have all appointment details in one place." },
+    { title: "Deposit Payment", image: depositPayment, description: "When deposit payments are set, customers will be required to pay a certain amount during the booking, while the remaining balance can be paid on the spot. Trafft allows you to add fixed or variable prices for deposits and enables deposit options for all services or individual ones." },
+    { title: "Refund Payment", image: refundPayment, description: "Increase bookings and build customer trust by offering your customers a refund in the case of cancellation." },
+  ];
+
   return (
     <>
       <h2 className="text-4xl font-bold mb-16">Booking website and form builder</h2>
@@ -109,6 +135,29 @@ const All = () => {
       <h2 className="text-4xl font-bold my-16">Admin and employee management</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {AdminAndEmployeeManagement.map((item, index) => (
+          <div key={index} className="relative group bg-[#eef4ff] rounded-xl overflow-hidden shadow-md text-black transition-transform duration-300 transform hover:scale-105 cursor-pointer">
+            {/* Image Container */}
+            <div className="h-[200px] bg-white flex items-center justify-center overflow-hidden">
+              <img src={item.image} alt={item.title} className="object-contain h-full w-full transition-transform duration-300 group-hover:scale-105" />
+            </div>
+
+            {/* Title */}
+            <div className="p-4 font-semibold text-center">{item.title}</div>
+
+            {/* Hover Description Layer */}
+            <div className="absolute inset-0 bg-white/90 px-4 py-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between rounded-xl text-sm text-gray-800">
+              <div>
+                <h4 className="font-bold text-base mb-2">{item.title}</h4>
+                <p className="leading-relaxed">{item.description}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="text-4xl font-bold my-16">Appointments</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {Appointments.map((item, index) => (
           <div key={index} className="relative group bg-[#eef4ff] rounded-xl overflow-hidden shadow-md text-black transition-transform duration-300 transform hover:scale-105 cursor-pointer">
             {/* Image Container */}
             <div className="h-[200px] bg-white flex items-center justify-center overflow-hidden">
