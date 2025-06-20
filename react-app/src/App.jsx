@@ -13,6 +13,7 @@ import CleaningService from "./Pages/CleaningService";
 import BarberShop from "./Pages/BarberShop";
 import FitnessAndSports from "./Pages/FitnessAndSports";
 import Faqs from "./Pages/Faqs";
+import Features from "./Pages/Features/Features";
 
 function App() {
   return (
@@ -30,6 +31,8 @@ function App() {
         <Route path="/barber-shop" element={<BarberShop />} />
         <Route path="/fitness-and-sports" element={<FitnessAndSports />} />
         <Route path="/faqs" element={<Faqs />} />
+        {/* Features */}
+        <Route path="/features" element={<Features />} />
       </Routes>
     </Router>
   );
