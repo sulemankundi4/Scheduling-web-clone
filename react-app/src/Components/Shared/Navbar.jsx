@@ -164,7 +164,7 @@ const Navbar = () => {
                         <h4 className="font-bold text-gray-900">All Integrations</h4>
                         <p className="text-sm text-gray-500 mt-1">Whatsapp, Paypal, Teams, Zoom, Zapier, Google Calendar, and more</p>
                       </Link>
-                      <Link to="/" className="block hover:bg-blue-50 hover:border-blue-500 border-transparent border-2 rounded p-2">
+                      <Link to="/reserve-with-google" className="block hover:bg-blue-50 hover:border-blue-500 border-transparent border-2 rounded p-2">
                         <h4 className="font-bold text-gray-900">Reserve with Google</h4>
                         <p className="text-sm text-gray-500 mt-1">Accept bookings via Google Search and Maps</p>
                       </Link>
@@ -292,7 +292,7 @@ const Navbar = () => {
                       All Integrations
                     </Link>
                     <Link
-                      to="/"
+                      to="/reserve-with-google"
                       className="block py-2 px-4 text-gray-800 hover:bg-blue-50 font-medium text-base rounded"
                       onClick={() => {
                         setMobileFeaturesDropdownOpen(false);

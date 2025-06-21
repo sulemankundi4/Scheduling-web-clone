@@ -14,6 +14,7 @@ import BarberShop from "./Pages/BarberShop";
 import FitnessAndSports from "./Pages/FitnessAndSports";
 import Faqs from "./Pages/Faqs";
 import Features from "./Pages/Features/Features";
+import ReserveWithGoogle from "./Pages/Features/ReserveWithGoogle";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/faqs" element={<Faqs />} />
         {/* Features */}
         <Route path="/features" element={<Features />} />
+        <Route path="/reserve-with-google" element={<ReserveWithGoogle />} />
       </Routes>
     </Router>
   );
