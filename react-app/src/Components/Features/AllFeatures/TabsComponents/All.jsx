@@ -16,7 +16,6 @@ import multilingual from "../../../../assets/Images/MultilingualSupport.webp";
 import ratingReview from "../../../../assets/Images/Ratings & Reviews.webp";
 import customerPanel from "../../../../assets/Images/Customer Panel Access.webp";
 import chatBot from "../../../../assets/Images/Chat Bot.webp";
-//////////////////////////////////////////////////////////////////////////////////////////////////////
 import resources from "../../../../assets/Images/resources.webp";
 import empCommision from "../../../../assets/Images/employee_commission.webp";
 import unlimitedCustomer from "../../../../assets/Images/Unlimited Customer.webp";
@@ -29,7 +28,7 @@ import invoice from "../../../../assets/Images/Invoices.webp";
 import taxes from "../../../../assets/Images/taxes.webp";
 import employeeTime from "../../../../assets/Images/Employees Time Zone.webp";
 import companyDays from "../../../../assets/Images/Company Days Off.webp";
-//////////////////////////////////
+
 import multipleServices from "../../../../assets/Images/Multiple Services (Free).webp";
 import managingAppts from "../../../../assets/Images/Managing Appointments (Free).webp";
 import groupBooking from "../../../../assets/Images/Group Booking (PRO).webp";
@@ -50,7 +49,7 @@ import paypal from "../../../../assets/Images/paypal.webp";
 import stripe from "../../../../assets/Images/stripe.webp";
 import mollie from "../../../../assets/Images/mollie.webp";
 import authorize from "../../../../assets/Images/authorize.webp";
-//////////////////////////
+
 import wordpress from "../../../../assets/Images/wordpress.webp";
 import googleAds from "../../../../assets/Images/tag-manager.webp";
 import reserveGoogle from "../../../../assets/Images/reserve with google.webp";
@@ -60,12 +59,12 @@ import whatsapp from "../../../../assets/Images/whatsapp.webp";
 import acumbamail from "../../../../assets/Images/acumba.webp";
 import sendfox from "../../../../assets/Images/sendfox.webp";
 import mailchimp from "../../../../assets/Images/mailchimp.webp";
-/////////////
+
 import api from "../../../../assets/Images/API.webp";
 import zapier from "../../../../assets/Images/zapier.webp";
 import webhooks from "../../../../assets/Images/webhoocks.webp";
 
-const All = () => {
+const All = ({ searchTerm = "" }) => {
   const bookingWebsiteAndFormBuilder = [
     // Booking website and form builder
     // Booking website and form builder
@@ -101,7 +100,7 @@ const All = () => {
     { title: "Resources", image: resources, description: "Set up resources like rooms, equipment, vehicles, or other limited assets to be shared across employees, services, or locations. When a specific resource is not available, Trafft will automatically remove that time slot from your booking form." },
     { title: "Employee Commission", image: empCommision, description: "This feature simplifies and streamlines the calculation of employee payouts. You can apply global settings or configure custom commissions for each employee." },
     { title: "Unlimited Customers", image: unlimitedCustomer, description: "Admin and employees have the ability to efficiently manage customers, edit their information, track loyal customers, and import/export customer lists." },
-    { title: "Admin’s Page and Calendar View", image: adminPage, description: "Admin’s page can be used by account owners and each employee, depending on the role settings. In addition, Admin can view all bookings with breakdowns by employees in the overview calendar." },
+    { title: "Admin's Page and Calendar View", image: adminPage, description: "Admin's page can be used by account owners and each employee, depending on the role settings. In addition, Admin can view all bookings with breakdowns by employees in the overview calendar." },
 
     { title: "Insightful Dashboard", image: dashboard, description: "The KPI Dashboard provides insights into your business's performance. Widgets display key metrics such as the number of new customers, revenue generated during a specific period, employee occupancy, daily occupancy, and other important data for a successful business." },
     { title: "Special Days for Employees", image: specialDays, description: "The special days feature allows you to set customized working schedules for specific employees on one or more days. This overrides the employees' general working schedules, ensuring flexibility when needed." },
@@ -132,9 +131,9 @@ const All = () => {
 
   const CalendarVideoConference = [
     { title: "Zoom Integration", image: zoom, description: "When booking an appointment, Trafft automatically generates Zoom meetings for the linked account. Both the customer and employee will receive a booking confirmation email containing the Zoom meeting details, ensuring seamless virtual meetings." },
-    { title: "Google Calendar and Google Meet", image: google, description: "Sync your and your employees’ personal and professional events by connecting Google calendars. Enable Google Meet if you want to automatically add meeting links to Google Events." },
+    { title: "Google Calendar and Google Meet", image: google, description: "Sync your and your employees' personal and professional events by connecting Google calendars. Enable Google Meet if you want to automatically add meeting links to Google Events." },
     { title: "Outlook Calendar and Microsoft Teams", image: outlook, description: "Sync your and your employees personal and professional events by connecting multiple Outlook calendars. Schedule virtual meetings with ease using MS Teams." },
-    { title: "Apple Calendar", image: apple, description: "Sync your or your employees’ working hours with Apple Calendar to prevent scheduling conflicts between personal and business calendars. Trafft updates your Apple Calendar with all appointments, ensuring Trafft won’t accept reservations during your busy times." },
+    { title: "Apple Calendar", image: apple, description: "Sync your or your employees' working hours with Apple Calendar to prevent scheduling conflicts between personal and business calendars. Trafft updates your Apple Calendar with all appointments, ensuring Trafft won't accept reservations during your busy times." },
   ];
 
   const Payment = [
@@ -147,14 +146,14 @@ const All = () => {
 
   const MarketingTools = [
     { title: "WordPress", image: wordpress, description: "Download the Trafft WordPress plugin for free and add a booking form to any page of your website." },
-    { title: "Reserve with Google", image: reserveGoogle, description: "Activate Trafft’s integration with Reserve with Google and start accepting bookings directly from Google Search and Google Maps." },
+    { title: "Reserve with Google", image: reserveGoogle, description: "Activate Trafft's integration with Reserve with Google and start accepting bookings directly from Google Search and Google Maps." },
     { title: "Facebook Pixel", image: facebookPixel, description: "Enhance your advertising efforts by adding a Facebook Pixel code to your Trafft booking page. This enables you to track conversions from Facebook ads and optimize your advertising strategies based on the collected data." },
     { title: "Google Analytics", image: googleAnalytics, description: "Gain valuable insights into your visitors' behavior by adding a simple Google Analytics tracking code to your Trafft booking page." },
     { title: "Google Tag Manager", image: googleAds, description: "Effortlessly incorporate a Google Tag Manager tracking code into your Trafft booking page to effectively monitor and track visitors' activity." },
     { title: "Mailchimp", image: mailchimp, description: "Streamline your lead nurturing and retention efforts by seamlessly transferring customers' data, including names and emails, from your Trafft account to MailChimp in just a few clicks." },
     { title: "SendFox", image: sendfox, description: "Expand your audience and create targeted email campaigns using SendFox. Automatically transfer customers' data from Trafft to SendFox for effective customer engagement." },
     { title: "WhatsApp", image: whatsapp, description: "Improve customer communication and reduce no-shows by integrating Trafft with WhatsApp. Send notifications about upcoming appointments to your customers and employees through WhatsApp, enhancing customer retention and engagement." },
-    { title: "Acumbamail", image: acumbamail, description: "Automate communication with your customers through Trafft’s integration with Acumbamail. Create customer lists and easily send email and SMS campaigns." },
+    { title: "Acumbamail", image: acumbamail, description: "Automate communication with your customers through Trafft's integration with Acumbamail. Create customer lists and easily send email and SMS campaigns." },
   ];
 
   const ApiAndConnectors = [
@@ -163,168 +162,220 @@ const All = () => {
     { title: "WebHooks", image: webhooks, description: "Leverage the power of WebHooks to connect with other web applications and effortlessly send automated messages and updates to custom URLs. Seamlessly transfer data from Trafft to any other connected application using WebHooks." },
   ];
 
+  // Filter function to search in title and description
+  const filterItems = (items) => {
+    if (!searchTerm.trim()) return items;
+    return items.filter((item) => item.title.toLowerCase().includes(searchTerm.toLowerCase()) || item.description.toLowerCase().includes(searchTerm.toLowerCase()));
+  };
+
+  // Filter all arrays
+  const filteredBookingWebsiteAndFormBuilder = filterItems(bookingWebsiteAndFormBuilder);
+  const filteredAdminAndEmployeeManagement = filterItems(AdminAndEmployeeManagement);
+  const filteredAppointments = filterItems(Appointments);
+  const filteredCalendarVideoConference = filterItems(CalendarVideoConference);
+  const filteredPayment = filterItems(Payment);
+  const filteredMarketingTools = filterItems(MarketingTools);
+  const filteredApiAndConnectors = filterItems(ApiAndConnectors);
+
+  // Check if any results exist
+  const hasResults = filteredBookingWebsiteAndFormBuilder.length > 0 || filteredAdminAndEmployeeManagement.length > 0 || filteredAppointments.length > 0 || filteredCalendarVideoConference.length > 0 || filteredPayment.length > 0 || filteredMarketingTools.length > 0 || filteredApiAndConnectors.length > 0;
+
   return (
     <>
-      <h2 className="text-4xl font-bold mb-16">Booking website and form builder</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {bookingWebsiteAndFormBuilder.map((item, index) => (
-          <div key={index} className="relative group bg-[#eef4ff] rounded-xl overflow-hidden shadow-md text-black transition-transform duration-300 transform hover:scale-105 cursor-pointer">
-            {/* Image Container */}
-            <div className="h-[200px] bg-white flex items-center justify-center overflow-hidden">
-              <img src={item.image} alt={item.title} className="object-contain h-full w-full transition-transform duration-300 group-hover:scale-105" />
-            </div>
+      {searchTerm && !hasResults && (
+        <div className="text-center py-8">
+          <p className="text-gray-500 text-lg">No results found for "{searchTerm}"</p>
+        </div>
+      )}
 
-            {/* Title */}
-            <div className="p-4 font-semibold text-center">{item.title}</div>
+      {filteredBookingWebsiteAndFormBuilder.length > 0 && (
+        <>
+          <h2 className="text-4xl font-bold mb-16">Booking website and form builder</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {filteredBookingWebsiteAndFormBuilder.map((item, index) => (
+              <div key={index} className="relative group bg-[#eef4ff] rounded-xl overflow-hidden shadow-md text-black transition-transform duration-300 transform hover:scale-105 cursor-pointer">
+                {/* Image Container */}
+                <div className="h-[200px] bg-white flex items-center justify-center overflow-hidden">
+                  <img src={item.image} alt={item.title} className="object-contain h-full w-full transition-transform duration-300 group-hover:scale-105" />
+                </div>
 
-            {/* Hover Description Layer */}
-            <div className="absolute inset-0 bg-white/90 px-4 py-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between rounded-xl text-sm text-gray-800">
-              <div>
-                <h4 className="font-bold text-base mb-2">{item.title}</h4>
-                <p className="leading-relaxed">{item.description}</p>
+                {/* Title */}
+                <div className="p-4 font-semibold text-center">{item.title}</div>
+
+                {/* Hover Description Layer */}
+                <div className="absolute inset-0 bg-white/90 px-4 py-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between rounded-xl text-sm text-gray-800">
+                  <div>
+                    <h4 className="font-bold text-base mb-2">{item.title}</h4>
+                    <p className="leading-relaxed">{item.description}</p>
+                  </div>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </>
+      )}
 
-      <h2 className="text-4xl font-bold my-16">Admin and employee management</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {AdminAndEmployeeManagement.map((item, index) => (
-          <div key={index} className="relative group bg-[#eef4ff] rounded-xl overflow-hidden shadow-md text-black transition-transform duration-300 transform hover:scale-105 cursor-pointer">
-            {/* Image Container */}
-            <div className="h-[200px] bg-white flex items-center justify-center overflow-hidden">
-              <img src={item.image} alt={item.title} className="object-contain h-full w-full transition-transform duration-300 group-hover:scale-105" />
-            </div>
+      {filteredAdminAndEmployeeManagement.length > 0 && (
+        <>
+          <h2 className="text-4xl font-bold my-16">Admin and employee management</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {filteredAdminAndEmployeeManagement.map((item, index) => (
+              <div key={index} className="relative group bg-[#eef4ff] rounded-xl overflow-hidden shadow-md text-black transition-transform duration-300 transform hover:scale-105 cursor-pointer">
+                {/* Image Container */}
+                <div className="h-[200px] bg-white flex items-center justify-center overflow-hidden">
+                  <img src={item.image} alt={item.title} className="object-contain h-full w-full transition-transform duration-300 group-hover:scale-105" />
+                </div>
 
-            {/* Title */}
-            <div className="p-4 font-semibold text-center">{item.title}</div>
+                {/* Title */}
+                <div className="p-4 font-semibold text-center">{item.title}</div>
 
-            {/* Hover Description Layer */}
-            <div className="absolute inset-0 bg-white/90 px-4 py-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between rounded-xl text-sm text-gray-800">
-              <div>
-                <h4 className="font-bold text-base mb-2">{item.title}</h4>
-                <p className="leading-relaxed">{item.description}</p>
+                {/* Hover Description Layer */}
+                <div className="absolute inset-0 bg-white/90 px-4 py-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between rounded-xl text-sm text-gray-800">
+                  <div>
+                    <h4 className="font-bold text-base mb-2">{item.title}</h4>
+                    <p className="leading-relaxed">{item.description}</p>
+                  </div>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </>
+      )}
 
-      <h2 className="text-4xl font-bold my-16">Appointments</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {Appointments.map((item, index) => (
-          <div key={index} className="relative group bg-[#eef4ff] rounded-xl overflow-hidden shadow-md text-black transition-transform duration-300 transform hover:scale-105 cursor-pointer">
-            {/* Image Container */}
-            <div className="h-[200px] bg-white flex items-center justify-center overflow-hidden">
-              <img src={item.image} alt={item.title} className="object-contain h-full w-full transition-transform duration-300 group-hover:scale-105" />
-            </div>
+      {filteredAppointments.length > 0 && (
+        <>
+          <h2 className="text-4xl font-bold my-16">Appointments</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {filteredAppointments.map((item, index) => (
+              <div key={index} className="relative group bg-[#eef4ff] rounded-xl overflow-hidden shadow-md text-black transition-transform duration-300 transform hover:scale-105 cursor-pointer">
+                {/* Image Container */}
+                <div className="h-[200px] bg-white flex items-center justify-center overflow-hidden">
+                  <img src={item.image} alt={item.title} className="object-contain h-full w-full transition-transform duration-300 group-hover:scale-105" />
+                </div>
 
-            {/* Title */}
-            <div className="p-4 font-semibold text-center">{item.title}</div>
+                {/* Title */}
+                <div className="p-4 font-semibold text-center">{item.title}</div>
 
-            {/* Hover Description Layer */}
-            <div className="absolute inset-0 bg-white/90 px-4 py-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between rounded-xl text-sm text-gray-800">
-              <div>
-                <h4 className="font-bold text-base mb-2">{item.title}</h4>
-                <p className="leading-relaxed">{item.description}</p>
+                {/* Hover Description Layer */}
+                <div className="absolute inset-0 bg-white/90 px-4 py-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between rounded-xl text-sm text-gray-800">
+                  <div>
+                    <h4 className="font-bold text-base mb-2">{item.title}</h4>
+                    <p className="leading-relaxed">{item.description}</p>
+                  </div>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </>
+      )}
 
-      <h2 className="text-4xl font-bold my-16">Calendar & Video Conference</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {CalendarVideoConference.map((item, index) => (
-          <div key={index} className="relative group bg-[#eef4ff] rounded-xl overflow-hidden shadow-md text-black transition-transform duration-300 transform hover:scale-105 cursor-pointer">
-            {/* Image Container */}
-            <div className="h-[200px] bg-white flex items-center justify-center overflow-hidden">
-              <img src={item.image} alt={item.title} className="object-contain h-full w-full transition-transform duration-300 group-hover:scale-105" />
-            </div>
+      {filteredCalendarVideoConference.length > 0 && (
+        <>
+          <h2 className="text-4xl font-bold my-16">Calendar & Video Conference</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {filteredCalendarVideoConference.map((item, index) => (
+              <div key={index} className="relative group bg-[#eef4ff] rounded-xl overflow-hidden shadow-md text-black transition-transform duration-300 transform hover:scale-105 cursor-pointer">
+                {/* Image Container */}
+                <div className="h-[200px] bg-white flex items-center justify-center overflow-hidden">
+                  <img src={item.image} alt={item.title} className="object-contain h-full w-full transition-transform duration-300 group-hover:scale-105" />
+                </div>
 
-            {/* Title */}
-            <div className="p-4 font-semibold text-center">{item.title}</div>
+                {/* Title */}
+                <div className="p-4 font-semibold text-center">{item.title}</div>
 
-            {/* Hover Description Layer */}
-            <div className="absolute inset-0 bg-white/90 px-4 py-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between rounded-xl text-sm text-gray-800">
-              <div>
-                <h4 className="font-bold text-base mb-2">{item.title}</h4>
-                <p className="leading-relaxed">{item.description}</p>
+                {/* Hover Description Layer */}
+                <div className="absolute inset-0 bg-white/90 px-4 py-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between rounded-xl text-sm text-gray-800">
+                  <div>
+                    <h4 className="font-bold text-base mb-2">{item.title}</h4>
+                    <p className="leading-relaxed">{item.description}</p>
+                  </div>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </>
+      )}
 
-      <h2 className="text-4xl font-bold my-16">Payment</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {Payment.map((item, index) => (
-          <div key={index} className="relative group bg-[#eef4ff] rounded-xl overflow-hidden shadow-md text-black transition-transform duration-300 transform hover:scale-105 cursor-pointer">
-            {/* Image Container */}
-            <div className="h-[200px] bg-white flex items-center justify-center overflow-hidden">
-              <img src={item.image} alt={item.title} className="object-contain h-full w-full transition-transform duration-300 group-hover:scale-105" />
-            </div>
+      {filteredPayment.length > 0 && (
+        <>
+          <h2 className="text-4xl font-bold my-16">Payment</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {filteredPayment.map((item, index) => (
+              <div key={index} className="relative group bg-[#eef4ff] rounded-xl overflow-hidden shadow-md text-black transition-transform duration-300 transform hover:scale-105 cursor-pointer">
+                {/* Image Container */}
+                <div className="h-[200px] bg-white flex items-center justify-center overflow-hidden">
+                  <img src={item.image} alt={item.title} className="object-contain h-full w-full transition-transform duration-300 group-hover:scale-105" />
+                </div>
 
-            {/* Title */}
-            <div className="p-4 font-semibold text-center">{item.title}</div>
+                {/* Title */}
+                <div className="p-4 font-semibold text-center">{item.title}</div>
 
-            {/* Hover Description Layer */}
-            <div className="absolute inset-0 bg-white/90 px-4 py-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between rounded-xl text-sm text-gray-800">
-              <div>
-                <h4 className="font-bold text-base mb-2">{item.title}</h4>
-                <p className="leading-relaxed">{item.description}</p>
+                {/* Hover Description Layer */}
+                <div className="absolute inset-0 bg-white/90 px-4 py-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between rounded-xl text-sm text-gray-800">
+                  <div>
+                    <h4 className="font-bold text-base mb-2">{item.title}</h4>
+                    <p className="leading-relaxed">{item.description}</p>
+                  </div>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </>
+      )}
 
-      <h2 className="text-4xl font-bold my-16">Marketing Tools</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {MarketingTools.map((item, index) => (
-          <div key={index} className="relative group bg-[#eef4ff] rounded-xl overflow-hidden shadow-md text-black transition-transform duration-300 transform hover:scale-105 cursor-pointer">
-            {/* Image Container */}
-            <div className="h-[200px] bg-white flex items-center justify-center overflow-hidden">
-              <img src={item.image} alt={item.title} className="object-contain h-full w-full transition-transform duration-300 group-hover:scale-105" />
-            </div>
+      {filteredMarketingTools.length > 0 && (
+        <>
+          <h2 className="text-4xl font-bold my-16">Marketing Tools</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {filteredMarketingTools.map((item, index) => (
+              <div key={index} className="relative group bg-[#eef4ff] rounded-xl overflow-hidden shadow-md text-black transition-transform duration-300 transform hover:scale-105 cursor-pointer">
+                {/* Image Container */}
+                <div className="h-[200px] bg-white flex items-center justify-center overflow-hidden">
+                  <img src={item.image} alt={item.title} className="object-contain h-full w-full transition-transform duration-300 group-hover:scale-105" />
+                </div>
 
-            {/* Title */}
-            <div className="p-4 font-semibold text-center">{item.title}</div>
+                {/* Title */}
+                <div className="p-4 font-semibold text-center">{item.title}</div>
 
-            {/* Hover Description Layer */}
-            <div className="absolute inset-0 bg-white/90 px-4 py-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between rounded-xl text-sm text-gray-800">
-              <div>
-                <h4 className="font-bold text-base mb-2">{item.title}</h4>
-                <p className="leading-relaxed">{item.description}</p>
+                {/* Hover Description Layer */}
+                <div className="absolute inset-0 bg-white/90 px-4 py-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between rounded-xl text-sm text-gray-800">
+                  <div>
+                    <h4 className="font-bold text-base mb-2">{item.title}</h4>
+                    <p className="leading-relaxed">{item.description}</p>
+                  </div>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </>
+      )}
 
-      <h2 className="text-4xl font-bold my-16">API & Connectors</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {ApiAndConnectors.map((item, index) => (
-          <div key={index} className="relative group bg-[#eef4ff] rounded-xl overflow-hidden shadow-md text-black transition-transform duration-300 transform hover:scale-105 cursor-pointer">
-            {/* Image Container */}
-            <div className="h-[200px] bg-white flex items-center justify-center overflow-hidden">
-              <img src={item.image} alt={item.title} className="object-contain h-full w-full transition-transform duration-300 group-hover:scale-105" />
-            </div>
+      {filteredApiAndConnectors.length > 0 && (
+        <>
+          <h2 className="text-4xl font-bold my-16">API & Connectors</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {filteredApiAndConnectors.map((item, index) => (
+              <div key={index} className="relative group bg-[#eef4ff] rounded-xl overflow-hidden shadow-md text-black transition-transform duration-300 transform hover:scale-105 cursor-pointer">
+                {/* Image Container */}
+                <div className="h-[200px] bg-white flex items-center justify-center overflow-hidden">
+                  <img src={item.image} alt={item.title} className="object-contain h-full w-full transition-transform duration-300 group-hover:scale-105" />
+                </div>
 
-            {/* Title */}
-            <div className="p-4 font-semibold text-center">{item.title}</div>
+                {/* Title */}
+                <div className="p-4 font-semibold text-center">{item.title}</div>
 
-            {/* Hover Description Layer */}
-            <div className="absolute inset-0 bg-white/90 px-4 py-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between rounded-xl text-sm text-gray-800">
-              <div>
-                <h4 className="font-bold text-base mb-2">{item.title}</h4>
-                <p className="leading-relaxed">{item.description}</p>
+                {/* Hover Description Layer */}
+                <div className="absolute inset-0 bg-white/90 px-4 py-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between rounded-xl text-sm text-gray-800">
+                  <div>
+                    <h4 className="font-bold text-base mb-2">{item.title}</h4>
+                    <p className="leading-relaxed">{item.description}</p>
+                  </div>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </>
+      )}
     </>
   );
 };
