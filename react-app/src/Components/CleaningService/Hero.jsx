@@ -31,8 +31,6 @@ const Hero = () => {
         </div>
       </div>
 
-      <HeroStats />
-
       <div className="w-full bg-gradient-to-br from-pink-600 to-pink-400 py-20 px-4">
         <div className="max-w-4xl mx-auto bg-[#4b1248]/80 rounded-2xl text-center text-white p-10 shadow-xl">
           <div className="flex flex-col items-center">

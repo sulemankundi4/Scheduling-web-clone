@@ -2,9 +2,13 @@ import React from "react";
 
 // Import card images
 import booking1 from "../../assets/Images/Provide-online-card1.webp";
-import booking2 from "../../assets/Images/Provide-online-card1.webp";
-import booking3 from "../../assets/Images/Provide-online-card1.webp";
-import booking4 from "../../assets/Images/Provide-online-card1.webp";
+import booking2 from "../../assets/Images/Organize-employees.webp";
+import booking3 from "../../assets/Images/take-care.webp";
+import booking4 from "../../assets/Images/Manage-multi-loc.webp";
+import booking5 from "../../assets/Images/Get-paid.webp";
+import booking6 from "../../assets/Images/Sync-cal.webp";
+import booking7 from "../../assets/Images/Sync-cal.webp";
+import booking8 from "../../assets/Images/Gain-insight.webp";
 import Card from "../Shared/Card";
 
 const BookingCards = () => {
@@ -30,22 +34,22 @@ const BookingCards = () => {
       description: "If you have more than one business location, you don't need a different tool for each one. Manage all your locations with Trafft and have the entire business organized in one place.",
     },
     {
-      image: booking1,
+      image: booking5,
       title: "Provide online bookings 24/7",
       description: "A scheduling app keeps your business available for booking 24/7, allowing your customers to book at their convenience. Provide an exceptional booking experience and gain more loyal customers.",
     },
     {
-      image: booking2,
+      image: booking6,
       title: "Organize employees with flexibility",
       description: "Create flexible and specific schedules for your employees. Manage all staff calendars from one dashboard or allow them to self-schedule.",
     },
     {
-      image: booking3,
+      image: booking7,
       title: "Take care of your customers",
       description: "Trafft's CRM enables you to create customer lists and maintain customer data. Learn about your customers' favorite services, send them birthday greetings or loyalty coupons, and provide the best experience.",
     },
     {
-      image: booking4,
+      image: booking8,
       title: "Manage multi-location business",
       description: "If you have more than one business location, you don't need a different tool for each one. Manage all your locations with Trafft and have the entire business organized in one place.",
     },

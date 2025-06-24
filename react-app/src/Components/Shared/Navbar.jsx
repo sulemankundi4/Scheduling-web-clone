@@ -119,7 +119,16 @@ const Navbar = () => {
   return (
     <>
       <header className={`bg-[#050F2C] text-white w-full shadow-sm fixed top-0 left-0 z-50 transition-transform duration-300 ease-in-out ${showNavbar ? "translate-y-0" : "-translate-y-full"}`}>
-        <div className="max-w-7xl mx-auto px-4 py-4">
+        <div className="max-w-7xl mt-4 mx-auto px-4 flex justify-end items-center text-sm gap-6">
+          <Link to="/login" className="hover:text-[#39FF14] font-medium transition">
+            Log in
+          </Link>
+          <Link to="/signup" className="hover:text-[#39FF14] font-medium transition">
+            Sign up
+          </Link>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4">
           {/* Top Row - Logo and Hamburger */}
           <div className="flex items-center justify-between">
             {/* Logo (always visible) */}
@@ -168,10 +177,6 @@ const Navbar = () => {
                         <h4 className="font-bold text-gray-900">Reserve with Google</h4>
                         <p className="text-sm text-gray-500 mt-1">Accept bookings via Google Search and Maps</p>
                       </Link>
-                      <Link to="/" className="block hover:bg-blue-50 hover:border-blue-500 border-transparent border-2 rounded p-2">
-                        <h4 className="font-bold text-gray-900">WordPress Plugin</h4>
-                        <p className="text-sm text-gray-500 mt-1">Add Trafft booking form to any page of your WordPress website</p>
-                      </Link>
                     </div>
                   </div>
                 )}
@@ -201,6 +206,7 @@ const Navbar = () => {
                   {item.label}
                 </Link>
               ))}
+              {/* <button className=" bg-[#0056FF] hover:bg-[#0044cc] text-white px-5 py-2 rounded-md font-semibold transition hidden lg:inline-block">Book a Demo</button> */}
             </nav>
           </div>
 
@@ -300,16 +306,6 @@ const Navbar = () => {
                       }}
                     >
                       Reserve with Google
-                    </Link>
-                    <Link
-                      to="/"
-                      className="block py-2 px-4 text-gray-800 hover:bg-blue-50 font-medium text-base rounded"
-                      onClick={() => {
-                        setMobileFeaturesDropdownOpen(false);
-                        setMenuOpen(false);
-                      }}
-                    >
-                      WordPress Plugin
                     </Link>
                   </div>
                 )}

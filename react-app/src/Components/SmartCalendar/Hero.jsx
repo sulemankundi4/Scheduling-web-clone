@@ -29,8 +29,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-
-      <HeroStats />
     </>
   );
 };

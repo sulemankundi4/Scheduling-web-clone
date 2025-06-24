@@ -28,7 +28,7 @@ const Footer = () => {
               <div>
                 <h4 className="text-white font-semibold text-lg mb-4">Contact</h4>
                 <div className="space-y-2">
-                  <p className="hover:text-white transition cursor-pointer">help@trafft.com</p>
+                  <p className="hover:text-white transition cursor-pointer">support@quicklybooked.app</p>
                   <p className="hover:text-white transition cursor-pointer">US: +1 302 307 2377</p>
                   <p className="hover:text-white transition cursor-pointer">UK: +44 7400 321338</p>
                   <p className="hover:text-white transition cursor-pointer">Europe: +381 60 4070 370</p>
@@ -41,18 +41,6 @@ const Footer = () => {
                 <a href="#" className="hover:text-white transition">
                   <Instagram size={20} />
                 </a>
-                <a href="#" className="hover:text-white transition">
-                  <X size={20} />
-                </a>
-                <a href="#" className="hover:text-white transition">
-                  <Linkedin size={20} />
-                </a>
-                <a href="#" className="hover:text-white transition">
-                  <Youtube size={20} />
-                </a>
-                <a href="#" className="hover:text-white transition">
-                  <Music2 size={20} />
-                </a>
               </div>
             </div>
 
@@ -60,18 +48,10 @@ const Footer = () => {
             <div>
               <h4 className="text-white font-semibold text-lg mb-4">Who's it for</h4>
               <ul className="space-y-3 text-sm">
-                <li className="hover:text-white transition cursor-pointer">Government & Administration</li>
-                <li className="hover:text-white transition cursor-pointer">Education and Teaching</li>
-                <li className="hover:text-white transition cursor-pointer">Coaching and Consulting</li>
-                <li className="hover:text-white transition cursor-pointer">Sports and Training</li>
-                <li className="hover:text-white transition cursor-pointer">Salons</li>
+                <li className="hover:text-white transition cursor-pointer">Beauty Salons</li>
                 <li className="hover:text-white transition cursor-pointer">Barbershop</li>
-                <li className="hover:text-white transition cursor-pointer">Healthcare</li>
-                <li className="hover:text-white transition cursor-pointer">Dental Services</li>
-                <li className="hover:text-white transition cursor-pointer">Personal services</li>
                 <li className="hover:text-white transition cursor-pointer">Cleaning services</li>
-                <li className="hover:text-white transition cursor-pointer">Home services</li>
-                <li className="hover:text-white transition cursor-pointer">Automotive services</li>
+                <li className="hover:text-white transition cursor-pointer">Fitness & Sports</li>
               </ul>
             </div>
 
@@ -104,7 +84,7 @@ const Footer = () => {
 
           <div className="border-t border-white/10 pt-8 pb-6">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-sm text-gray-400">All Rights Reserved ® Trafft 2025</p>
+              <p className="text-sm text-gray-400">All Rights Reserved ® Quickly Booked 2025</p>
               <div className="flex gap-6 text-sm">
                 <a href="#" className="text-gray-400 hover:text-white transition">
                   Privacy Policy

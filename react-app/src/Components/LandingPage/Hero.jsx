@@ -37,8 +37,6 @@ const HeroSection = () => {
           </div>
         </div>
       </section>
-
-      <HeroStats />
     </>
   );
 };
