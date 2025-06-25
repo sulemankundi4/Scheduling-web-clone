@@ -50,7 +50,6 @@ import stripe from "../../../../assets/Images/stripe.webp";
 import mollie from "../../../../assets/Images/mollie.webp";
 import authorize from "../../../../assets/Images/authorize.webp";
 
-import wordpress from "../../../../assets/Images/wordpress.webp";
 import googleAds from "../../../../assets/Images/tag-manager.webp";
 import reserveGoogle from "../../../../assets/Images/reserve with google.webp";
 import facebookPixel from "../../../../assets/Images/facebook-pixel.webp";
@@ -145,7 +144,6 @@ const All = ({ searchTerm = "" }) => {
   ];
 
   const MarketingTools = [
-    { title: "WordPress", image: wordpress, description: "Download the Trafft WordPress plugin for free and add a booking form to any page of your website." },
     { title: "Reserve with Google", image: reserveGoogle, description: "Activate Trafft's integration with Reserve with Google and start accepting bookings directly from Google Search and Google Maps." },
     { title: "Facebook Pixel", image: facebookPixel, description: "Enhance your advertising efforts by adding a Facebook Pixel code to your Trafft booking page. This enables you to track conversions from Facebook ads and optimize your advertising strategies based on the collected data." },
     { title: "Google Analytics", image: googleAnalytics, description: "Gain valuable insights into your visitors' behavior by adding a simple Google Analytics tracking code to your Trafft booking page." },

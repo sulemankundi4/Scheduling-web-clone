@@ -29,9 +29,7 @@ const Footer = () => {
                 <h4 className="text-white font-semibold text-lg mb-4">Contact</h4>
                 <div className="space-y-2">
                   <p className="hover:text-white transition cursor-pointer">support@quicklybooked.app</p>
-                  <p className="hover:text-white transition cursor-pointer">US: +1 302 307 2377</p>
-                  <p className="hover:text-white transition cursor-pointer">UK: +44 7400 321338</p>
-                  <p className="hover:text-white transition cursor-pointer">Europe: +381 60 4070 370</p>
+                  <p className="hover:text-white transition cursor-pointer">Whatsup: +61475414903</p>
                 </div>
               </div>
               <div className="flex gap-4">
@@ -60,13 +58,9 @@ const Footer = () => {
               <h4 className="text-white font-semibold text-lg mb-4">Product</h4>
               <ul className="space-y-3 text-sm">
                 <li className="hover:text-white transition cursor-pointer">Documentation</li>
-                <li className="hover:text-white transition cursor-pointer">Suggest a feature</li>
                 <li className="hover:text-white transition cursor-pointer">Become Affiliate Partner</li>
                 <li className="hover:text-white transition cursor-pointer">Blog</li>
-                <li className="hover:text-white transition cursor-pointer">About</li>
                 <li className="hover:text-white transition cursor-pointer">Contact us</li>
-                <li className="hover:text-white transition cursor-pointer">Investors</li>
-                <li className="hover:text-white transition cursor-pointer">Partners</li>
                 <li className="hover:text-white transition cursor-pointer">FAQ</li>
               </ul>
             </div>
