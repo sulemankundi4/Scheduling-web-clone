@@ -136,7 +136,7 @@ const Navbar = () => {
       <header className={`bg-[#050F2C] text-white w-full shadow-sm fixed top-0 left-0 z-50 transition-transform duration-300 ease-in-out ${showNavbar ? "translate-y-0" : "-translate-y-full"}`}>
         <div className="max-w-7xl mx-auto px-4">
           {/* Top Row - Logo and Hamburger */}
-          <div className="flex items-center justify-between">
+          <div className="flex items-center my-3 justify-between">
             {/* Logo (always visible) */}
             <div className="lg:hidden text-2xl font-bold flex items-center space-x-2">
               <Link to="/">
@@ -436,6 +436,17 @@ const Navbar = () => {
                   </div>
                 )}
               </div>
+            </div>
+
+            <Link to="/" className="block py-3 text-base font-semibold text-gray-900 hover:text-yellow-400 transition" onClick={handleMenuToggle}>
+              Login
+            </Link>
+            <Link to="/" className="block py-3 text-base font-semibold text-gray-900 hover:text-yellow-400 transition" onClick={handleMenuToggle}>
+              Sign up
+            </Link>
+
+            <div className="flex w-full my-3">
+              <button className="bg-[#0056FF] hover:bg-[#0044cc] text-white px-5 py-2 rounded-md font-semibold transition">Book a Demo</button>
             </div>
             {/* Main Links for Mobile */}
           </nav>
